@@ -1,0 +1,32 @@
+{
+  "name": "Télé-information",
+  "version": "1.0",
+  "slug": "tele_information",
+  "description": "Extract EDF télé-information from you electrical counter (France only)",
+  "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
+  "startup": "before",
+  "auto_uart": true,
+  "ports": {
+    "80/tcp": 8093
+  },
+  "ports_description": {
+    "8093/tcp": "Télé-information Rest Api"
+  },
+  "boot": "auto",
+  "options": {
+    "port": "/dev/ttyUSB1",
+    "baudrate": 1200,
+    "parity": "Even",
+    "databits": 7,
+    "stopbits": "One",
+    "handshake": "None"
+  },
+  "schema": {
+    "port": "str",
+    "baudrate": "int",
+    "parity": "str",
+    "databits": "int",
+    "stopbits": "str",
+    "handshake": "str"
+  }
+}
