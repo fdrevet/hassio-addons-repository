@@ -42,7 +42,9 @@
     },
       "MqttBroker": {
         "Hostname": "str",
-        "TcpPort": "int"
+        "TcpPort": "int",
+        "Username": "str?",
+        "Password": "str?"
     },
     "Misc": {
       "WattHoursGranularity": "int",
