@@ -1,8 +1,8 @@
 {
-  "name": "Télé-information",
-  "version": "1.0",
-  "slug": "tele_information",
-  "description": "Extract EDF télé-information from you electrical counter (France only)",
+  "name": "Télé-information to MQTT",
+  "version": "0.1",
+  "slug": "teleinfo2mqtt",
+  "description": "Extract EDF télé-information from you electrical counter (France only), and publish it to MQTT broker",
   "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
   "startup": "before",
   "auto_uart": true,
@@ -10,23 +10,43 @@
     "80/tcp": 8093
   },
   "ports_description": {
-    "8093/tcp": "Télé-information Rest Api"
+    "8093/tcp": "Télé-information to Mqtt's Rest Api"
   },
   "boot": "auto",
   "options": {
-    "port": "/dev/ttyUSB1",
-    "baudrate": 1200,
-    "parity": "Even",
-    "databits": 7,
-    "stopbits": "One",
-    "handshake": "None"
+    "SerialPort": {
+        "Port": "/dev/ttyUSB0",
+        "Baudrate": 1200,
+        "Parity": "Even",
+        "DataBits": 7,
+        "StopBits": "One",
+        "Handshake": "None"
+    },
+      "MqttBroker": {
+        "Hostname": "localhost",
+        "TcpPort": 1883
+    },
+    "Misc": {
+      "WattHoursGranularity": 1000,
+      "MqttPrefix": "homeassistant"
+    }
   },
   "schema": {
-    "port": "str",
-    "baudrate": "int",
-    "parity": "str",
-    "databits": "int",
-    "stopbits": "str",
-    "handshake": "str"
+    "SerialPort": {
+        "Port": "str",
+        "Baudrate": "int",
+        "Parity": "str",
+        "DataBits": "int",
+        "StopBits": "str",
+        "Handshake": "str"
+    },
+      "MqttBroker": {
+        "Hostname": "str",
+        "TcpPort": "int"
+    },
+    "Misc": {
+      "WattHoursGranularity": "int",
+      "MqttPrefix": "str"
+    }
   }
 }
