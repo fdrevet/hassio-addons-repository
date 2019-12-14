@@ -1,0 +1,4 @@
+*.pdb
+*.exe
+options.json
+*.Development.json
