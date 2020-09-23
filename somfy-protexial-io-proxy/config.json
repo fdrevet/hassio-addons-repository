@@ -1,0 +1,43 @@
+{
+  "name": "Somfy Protexial IO - Proxy",
+  "version": "0.1",
+  "slug": "spiop",
+  "description": "Expose a Rest Api to manage Somfy Protexial IO, acting like a proxy",
+  "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
+  "startup": "before",
+  "auto_uart": true,
+  "ports": {
+    "80/tcp": 8093
+  },
+  "ports_description": {
+    "80/tcp": "Rest Api 1",
+    "8093/tcp": "Rest Api 2"
+  },
+  "boot": "auto",
+  "options": {
+    "Alarm": {
+      "Hostname": "Alarm hostname or ip",
+      "TcpPort": 80,
+      "Username": "u",
+      "Password": "Alarm password",
+      "SecurityTable": "nnnnn nnnnn nnnnn nnnnn nnnnn..."
+    },
+    "Proxy": {
+      "AlarmConnectionRefresh": 30,
+      "AlarmStateRefresh": 5
+    }
+  },
+  "schema": {
+    "Alarm": {
+      "Hostname": "str",
+      "TcpPort": "int",
+      "Username": "str?",
+      "Password": "str",
+      "SecurityTable": "str"
+    },
+    "Proxy": {
+      "AlarmConnectionRefresh": "int",
+      "AlarmStateRefresh": "int"
+    }
+  }
+}

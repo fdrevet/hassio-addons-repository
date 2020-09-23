@@ -1,0 +1,12 @@
+{
+    "image": "hassioaddons/debian-base-{arch}",
+    "squash": false,
+    "build_from": {
+        "aarch64": "mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim-arm64v8",
+        "amd64": "mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim",
+        "armhf": "mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim-arm32v7",
+        "armv7": "mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim-arm32v7",
+        "i386": "mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim"
+    },
+    "args": {}
+}
