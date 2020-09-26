@@ -1,0 +1,36 @@
+{
+  "name": "Somfy Protexial IO - Gateway",
+  "version": "0.1",
+  "slug": "spiop",
+  "description": "Consume Somfy Protexial IO Proxy's REST API, to update HASS.io through MQTT",
+  "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
+  "startup": "before",
+  "auto_uart": true,
+  "ports": {
+    "80/tcp": 8094
+  },
+  "ports_description": {
+    "80/tcp": "Not used yet",
+  },
+  "boot": "auto",
+  "options": {
+    "MqttBroker": {
+      "Hostname": "MQTT broker hostname or ip",
+      "TcpPort": 1883,
+    },
+    "Proxy": {
+      "Hostname": "Somfy Protexial IO Proxy hostname or ip",
+      "TcpPort": 8093,
+    }
+  },
+  "schema": {
+    "Alarm": {
+      "Hostname": "str",
+      "TcpPort": "int",
+    },
+    "Proxy": {
+      "Hostname": "str",
+      "TcpPort": "int",
+    }
+  }
+}
