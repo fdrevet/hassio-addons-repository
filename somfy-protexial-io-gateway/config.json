@@ -24,7 +24,7 @@
     }
   },
   "schema": {
-    "Alarm": {
+    "MqttBroker": {
       "Hostname": "str",
       "TcpPort": "int"
     },
