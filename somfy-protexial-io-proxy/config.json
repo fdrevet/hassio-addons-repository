@@ -1,8 +1,8 @@
 {
   "name": "Somfy Protexial IO - Proxy",
-  "version": "0.1",
+  "version": "0.2",
   "slug": "spiop",
-  "description": "Expose a Rest Api to manage Somfy Protexial IO, acting like a proxy",
+  "description": "Expose a REST API to manage Somfy Protexial IO, acting like a proxy",
   "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
   "startup": "before",
   "auto_uart": true,
@@ -10,8 +10,7 @@
     "80/tcp": 8093
   },
   "ports_description": {
-    "80/tcp": "Rest Api 1",
-    "8093/tcp": "Rest Api 2"
+    "80/tcp": "Somfy Protexial IO Proxy REST API"
   },
   "boot": "auto",
   "options": {
