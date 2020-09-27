@@ -1,6 +1,6 @@
 {
   "name": "Somfy Protexial IO - Proxy",
-  "version": "0.2",
+  "version": "0.3",
   "slug": "spiop",
   "description": "Expose a REST API to manage Somfy Protexial IO, acting like a proxy",
   "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
