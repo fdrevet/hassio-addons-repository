@@ -1119,7 +1119,7 @@
           "lib/netcoreapp3.0/SomfyProtexialIO.Common.dll": {}
         }
       },
-      "SomfyProtexialIO.Implementations/1.7.3-beta3": {
+      "SomfyProtexialIO.Implementations/1.7.3-beta5": {
         "dependencies": {
           "Initia.Web": "1.2.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
@@ -2060,7 +2060,7 @@
           "Castle.Core": "4.4.1",
           "Microsoft.Extensions.Options": "3.1.8",
           "Quartz": "3.1.0",
-          "SomfyProtexialIO.Implementations": "1.7.3-beta3",
+          "SomfyProtexialIO.Implementations": "1.7.3-beta5",
           "SomfyProtexialIO.Proxy.Configuration": "1.4.0",
           "SomfyProtexialIO.SDK": "1.4.0"
         },
@@ -3703,7 +3703,7 @@
     "Initia.Web/1.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vwDGyNytl8WDyj8ThNUsJPFNm6MmyufgDX8+puNvEkiUTlYC3xvzoFGzklmEzJtregIO/oNV1cLpjJyovwiJsQ==",
+      "sha512": "sha512-WZ+cvkb1bDbu6ZTlHTWgUNJCDMBum6v6QRV2JxvZhh4Ei5/1ag4Q/8a34WV9CFRQpddxUVdjVeqVMmUt90INcw==",
       "path": "initia.web/1.2.0",
       "hashPath": "initia.web.1.2.0.nupkg.sha512"
     },
@@ -4277,21 +4277,21 @@
     "SomfyProtexialIO.Common/1.4.2-beta1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-n8f1BHSOdPtljoLakW/FAFCQYGWVGSKgC75QCLVxnekDfxWzzlecUgSsrYvtImOYEd6hBebXOW79qgQvby22vQ==",
+      "sha512": "sha512-Obnc38sepxXSMIU8x7k1NHY65zY0+XMnlepqZA54CmBVYrv7W9p2nagzrvhgLV563oFZssQNsQTGPshMEsqhJw==",
       "path": "somfyprotexialio.common/1.4.2-beta1",
       "hashPath": "somfyprotexialio.common.1.4.2-beta1.nupkg.sha512"
     },
-    "SomfyProtexialIO.Implementations/1.7.3-beta3": {
+    "SomfyProtexialIO.Implementations/1.7.3-beta5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fHMAwd/mUEKgt/+z9TVcNrRXq6TZYUnvmsNxw5WJ8LJtnGdX944N8F+rdmwSPrhkAPOi5tKuG1VCCAScf90x5Q==",
-      "path": "somfyprotexialio.implementations/1.7.3-beta3",
-      "hashPath": "somfyprotexialio.implementations.1.7.3-beta3.nupkg.sha512"
+      "sha512": "sha512-5yJJFHs1tT4HOG0iVkCuCdDmSdZvgQvnDkh9qqNl7Yop2TGGnAiXn7uBiaiCq7p/n2XFyWXhXhTsZ4Rkr5dxwQ==",
+      "path": "somfyprotexialio.implementations/1.7.3-beta5",
+      "hashPath": "somfyprotexialio.implementations.1.7.3-beta5.nupkg.sha512"
     },
     "SomfyProtexialIO.SDK/1.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-E/biIGaLn0cMQrDvo4SuAqLGGSa2ZHwrNVgtc8dyv6y/8/BpPZol4f+hydoVdXhYD946nWhwtFPFvQDV0NgNgQ==",
+      "sha512": "sha512-K4chVdIAkEDiaysQuTxi6H62NobzJx+LXYVQecmXKvX5sc1B9qqPD/kXCTFT9JZRCzBWKtpbcP+WzNvyCOzZ5g==",
       "path": "somfyprotexialio.sdk/1.4.0",
       "hashPath": "somfyprotexialio.sdk.1.4.0.nupkg.sha512"
     },
