@@ -1105,33 +1105,33 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
-      "SomfyProtexialIO.Common/1.4.2-beta1": {
+      "SomfyProtexialIO.Common/1.4.3": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8"
         },
         "runtime": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Common.dll": {
-            "assemblyVersion": "1.4.2.0",
-            "fileVersion": "1.4.2.0"
+            "assemblyVersion": "1.4.3.0",
+            "fileVersion": "1.4.3.0"
           }
         },
         "compile": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Common.dll": {}
         }
       },
-      "SomfyProtexialIO.Implementations/1.7.3-beta5": {
+      "SomfyProtexialIO.Implementations/1.7.4": {
         "dependencies": {
           "Initia.Web": "1.2.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
           "Microsoft.Extensions.Options": "3.1.8",
           "Quartz": "3.1.0",
-          "SomfyProtexialIO.Common": "1.4.2-beta1",
+          "SomfyProtexialIO.Common": "1.4.3",
           "SomfyProtexialIO.SDK": "1.4.0"
         },
         "runtime": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Implementations.dll": {
-            "assemblyVersion": "1.7.3.0",
-            "fileVersion": "1.7.3.0"
+            "assemblyVersion": "1.7.4.0",
+            "fileVersion": "1.7.4.0"
           }
         },
         "compile": {
@@ -1141,7 +1141,7 @@
       "SomfyProtexialIO.SDK/1.4.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
-          "SomfyProtexialIO.Common": "1.4.2-beta1"
+          "SomfyProtexialIO.Common": "1.4.3"
         },
         "runtime": {
           "lib/netcoreapp3.0/SomfyProtexialIO.SDK.dll": {
@@ -2060,7 +2060,7 @@
           "Castle.Core": "4.4.1",
           "Microsoft.Extensions.Options": "3.1.8",
           "Quartz": "3.1.0",
-          "SomfyProtexialIO.Implementations": "1.7.3-beta5",
+          "SomfyProtexialIO.Implementations": "1.7.4",
           "SomfyProtexialIO.Proxy.Configuration": "1.4.0",
           "SomfyProtexialIO.SDK": "1.4.0"
         },
@@ -4274,19 +4274,19 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
     },
-    "SomfyProtexialIO.Common/1.4.2-beta1": {
+    "SomfyProtexialIO.Common/1.4.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Obnc38sepxXSMIU8x7k1NHY65zY0+XMnlepqZA54CmBVYrv7W9p2nagzrvhgLV563oFZssQNsQTGPshMEsqhJw==",
-      "path": "somfyprotexialio.common/1.4.2-beta1",
-      "hashPath": "somfyprotexialio.common.1.4.2-beta1.nupkg.sha512"
+      "sha512": "sha512-xFgq9P9Yz/YL5O8vRqSPq73ECrf3kUhzeNcREqqdi1UQiuCbW0ENBSyzbRXJerWaKSCdsDOOy7x8+XNAW+xhIg==",
+      "path": "somfyprotexialio.common/1.4.3",
+      "hashPath": "somfyprotexialio.common.1.4.3.nupkg.sha512"
     },
-    "SomfyProtexialIO.Implementations/1.7.3-beta5": {
+    "SomfyProtexialIO.Implementations/1.7.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5yJJFHs1tT4HOG0iVkCuCdDmSdZvgQvnDkh9qqNl7Yop2TGGnAiXn7uBiaiCq7p/n2XFyWXhXhTsZ4Rkr5dxwQ==",
-      "path": "somfyprotexialio.implementations/1.7.3-beta5",
-      "hashPath": "somfyprotexialio.implementations.1.7.3-beta5.nupkg.sha512"
+      "sha512": "sha512-EifFyXOelwwBQJZ8wQL7JAaOBIVaFRzcK5d5FUdhb/DImfscIBMaPNS8zuzsidLezZ+kJ5tbf03+lgTO8BAFxw==",
+      "path": "somfyprotexialio.implementations/1.7.4",
+      "hashPath": "somfyprotexialio.implementations.1.7.4.nupkg.sha512"
     },
     "SomfyProtexialIO.SDK/1.4.0": {
       "type": "package",
