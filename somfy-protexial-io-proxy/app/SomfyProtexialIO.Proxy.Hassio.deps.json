@@ -26,7 +26,7 @@
         "dependencies": {
           "Quartz": "3.1.0",
           "SomfyProtexialIO.Proxy.Common": "1.2.0",
-          "SomfyProtexialIO.Proxy.MVC": "1.1.0",
+          "SomfyProtexialIO.Proxy.MVC": "1.1.1",
           "Microsoft.AspNetCore.Antiforgery.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1105,48 +1105,48 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
-      "SomfyProtexialIO.Common/1.4.3": {
+      "SomfyProtexialIO.Common/1.4.4": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8"
         },
         "runtime": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Common.dll": {
-            "assemblyVersion": "1.4.3.0",
-            "fileVersion": "1.4.3.0"
+            "assemblyVersion": "1.4.4.0",
+            "fileVersion": "1.4.4.0"
           }
         },
         "compile": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Common.dll": {}
         }
       },
-      "SomfyProtexialIO.Implementations/1.7.4": {
+      "SomfyProtexialIO.Implementations/1.7.10": {
         "dependencies": {
           "Initia.Web": "1.2.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
           "Microsoft.Extensions.Options": "3.1.8",
           "Quartz": "3.1.0",
-          "SomfyProtexialIO.Common": "1.4.3",
-          "SomfyProtexialIO.SDK": "1.4.0"
+          "SomfyProtexialIO.Common": "1.4.4",
+          "SomfyProtexialIO.SDK": "1.4.2"
         },
         "runtime": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Implementations.dll": {
-            "assemblyVersion": "1.7.4.0",
-            "fileVersion": "1.7.4.0"
+            "assemblyVersion": "1.7.10.0",
+            "fileVersion": "1.7.10.0"
           }
         },
         "compile": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Implementations.dll": {}
         }
       },
-      "SomfyProtexialIO.SDK/1.4.0": {
+      "SomfyProtexialIO.SDK/1.4.2": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
-          "SomfyProtexialIO.Common": "1.4.3"
+          "SomfyProtexialIO.Common": "1.4.4"
         },
         "runtime": {
           "lib/netcoreapp3.0/SomfyProtexialIO.SDK.dll": {
-            "assemblyVersion": "1.4.0.0",
-            "fileVersion": "1.4.0.0"
+            "assemblyVersion": "1.4.2.0",
+            "fileVersion": "1.4.2.0"
           }
         },
         "compile": {
@@ -2001,11 +2001,11 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "SomfyProtexialIO.Proxy.Client/1.0.0": {
+      "SomfyProtexialIO.Proxy.Client/1.0.5": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "SomfyProtexialIO.SDK": "1.4.0",
-          "SomfyProtexialIO.StateCache": "1.4.0"
+          "SomfyProtexialIO.SDK": "1.4.2",
+          "SomfyProtexialIO.StateCache": "1.4.5"
         },
         "runtime": {
           "SomfyProtexialIO.Proxy.Client.dll": {}
@@ -2020,10 +2020,10 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Extensions.Logging.Console": "3.1.8",
           "Quartz": "3.1.0",
-          "SomfyProtexialIO.Proxy.Client": "1.0.0",
+          "SomfyProtexialIO.Proxy.Client": "1.0.5",
           "SomfyProtexialIO.Proxy.Configuration": "1.4.0",
-          "SomfyProtexialIO.SDK": "1.4.0",
-          "SomfyProtexialIO.StateCache": "1.4.0"
+          "SomfyProtexialIO.SDK": "1.4.2",
+          "SomfyProtexialIO.StateCache": "1.4.5"
         },
         "runtime": {
           "SomfyProtexialIO.Proxy.Common.dll": {}
@@ -2040,13 +2040,13 @@
           "SomfyProtexialIO.Proxy.Configuration.dll": {}
         }
       },
-      "SomfyProtexialIO.Proxy.MVC/1.1.0": {
+      "SomfyProtexialIO.Proxy.MVC/1.1.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
-          "SomfyProtexialIO.Proxy.Client": "1.0.0",
-          "SomfyProtexialIO.StateCache": "1.4.0"
+          "SomfyProtexialIO.Proxy.Client": "1.0.5",
+          "SomfyProtexialIO.StateCache": "1.4.5"
         },
         "runtime": {
           "SomfyProtexialIO.Proxy.MVC.dll": {}
@@ -2055,14 +2055,14 @@
           "SomfyProtexialIO.Proxy.MVC.dll": {}
         }
       },
-      "SomfyProtexialIO.StateCache/1.4.0": {
+      "SomfyProtexialIO.StateCache/1.4.5": {
         "dependencies": {
           "Castle.Core": "4.4.1",
           "Microsoft.Extensions.Options": "3.1.8",
           "Quartz": "3.1.0",
-          "SomfyProtexialIO.Implementations": "1.7.4",
+          "SomfyProtexialIO.Implementations": "1.7.10",
           "SomfyProtexialIO.Proxy.Configuration": "1.4.0",
-          "SomfyProtexialIO.SDK": "1.4.0"
+          "SomfyProtexialIO.SDK": "1.4.2"
         },
         "runtime": {
           "SomfyProtexialIO.StateCache.dll": {}
@@ -4274,26 +4274,26 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
     },
-    "SomfyProtexialIO.Common/1.4.3": {
+    "SomfyProtexialIO.Common/1.4.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xFgq9P9Yz/YL5O8vRqSPq73ECrf3kUhzeNcREqqdi1UQiuCbW0ENBSyzbRXJerWaKSCdsDOOy7x8+XNAW+xhIg==",
-      "path": "somfyprotexialio.common/1.4.3",
-      "hashPath": "somfyprotexialio.common.1.4.3.nupkg.sha512"
+      "sha512": "sha512-ehxWEg+eLad+HgP7uXfWHIWNU2798/kwJLR2SzG/9HapSystKAzXNpnaqoBKia/4ZVSHewAm5DSRjgzTPk29LQ==",
+      "path": "somfyprotexialio.common/1.4.4",
+      "hashPath": "somfyprotexialio.common.1.4.4.nupkg.sha512"
     },
-    "SomfyProtexialIO.Implementations/1.7.4": {
+    "SomfyProtexialIO.Implementations/1.7.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EifFyXOelwwBQJZ8wQL7JAaOBIVaFRzcK5d5FUdhb/DImfscIBMaPNS8zuzsidLezZ+kJ5tbf03+lgTO8BAFxw==",
-      "path": "somfyprotexialio.implementations/1.7.4",
-      "hashPath": "somfyprotexialio.implementations.1.7.4.nupkg.sha512"
+      "sha512": "sha512-cI7YBCMZsuCO4K2ChksnlRaN3aCbSvMtYxOj+c5qABQ5riBBo7YM+IsY6LEgCnbNTD6Tapr/W8cWn02qLHwQ7w==",
+      "path": "somfyprotexialio.implementations/1.7.10",
+      "hashPath": "somfyprotexialio.implementations.1.7.10.nupkg.sha512"
     },
-    "SomfyProtexialIO.SDK/1.4.0": {
+    "SomfyProtexialIO.SDK/1.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-K4chVdIAkEDiaysQuTxi6H62NobzJx+LXYVQecmXKvX5sc1B9qqPD/kXCTFT9JZRCzBWKtpbcP+WzNvyCOzZ5g==",
-      "path": "somfyprotexialio.sdk/1.4.0",
-      "hashPath": "somfyprotexialio.sdk.1.4.0.nupkg.sha512"
+      "sha512": "sha512-QszD9H6f0SMaeKnTuYm0D3frZOUqjWBqs4wTYXAfOmAWStp0i/IF14rWcFh0uExotrXkwBbmEiVvcAtSKe5xvw==",
+      "path": "somfyprotexialio.sdk/1.4.2",
+      "hashPath": "somfyprotexialio.sdk.1.4.2.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -4876,7 +4876,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "SomfyProtexialIO.Proxy.Client/1.0.0": {
+    "SomfyProtexialIO.Proxy.Client/1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -4891,12 +4891,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SomfyProtexialIO.Proxy.MVC/1.1.0": {
+    "SomfyProtexialIO.Proxy.MVC/1.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "SomfyProtexialIO.StateCache/1.4.0": {
+    "SomfyProtexialIO.StateCache/1.4.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

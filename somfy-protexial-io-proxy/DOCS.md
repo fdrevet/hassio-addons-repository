@@ -1,4 +1,4 @@
-Welcome to Somfy Protexial IO Proxy add-on !
+Welcome to "Somfy Protexial IO Proxy" add-on !
 
 
 
@@ -14,7 +14,11 @@ I don't own a Tahoma Box and don't need/want one for the moment. So, I wrote thi
 
 ## Unofficial add-on
 
-This add-on is UNOFFICIAL, I don't work for Somfy Group or am affiliated with them in any way.
+This add-on is UNOFFICIAL.
+
+This add-on doesn't rely on any Somfy integration.
+
+I don't work for Somfy Group or am affiliated with them in any way.
 
 
 
@@ -66,9 +70,33 @@ How it works ?
 
 
 
+# Stability
+
+Some stability issues can arise with web scrapping (sometimes the alarm is not responding)
+
+Scrapping every 5 seconds maybe too fast, anyway this can be configured (see Configuration section)
+
+
+
+# Issue with physical alarm
+
+It’s important to note that once the “Somfy Protexial IO Proxy” add-on is started and connected, it's quite difficult to connect to the alarm  web user interface (from a browser or application doing also web scrapping...)
+
+
+
+Indeed, “Somfy Protexial IO Proxy” add-on connect on the alarm, and try to reconnect if anything goes wrong.
+
+
+
+The alarm web user interface only accepts one logged in user at a time.
+
+
+
+I plan to release an “Emulator”, also consuming “Somfy Protexial IO Proxy” REST API, as a workaround for this annoying problem.
+
+
+
 # REST API
-
-
 
 “Somfy Protexial IO Proxy” expose data with a custom REST API, available on your HASS.io server's port 8193 (default)
 
@@ -76,58 +104,61 @@ How it works ?
 
 Here are some links to check that all is working (no swagger available yet)
 
-* http://hostname:8193s => should return {“version”:“1.0.0”,“description”:""}
-* http://hostname:8193/api/status => return alarm’s global status as json
-* http://hostname:8193/api/elements => return alarm’s elements as json
+
+
+## Version
+
+http://hostname:8193
+
+Return static JSON with REST API version and description
+
+```
+{“version”:“1.0.0”,“description”:""}
+```
+
+
+
+## Alarm’s global status
+
+http://hostname:8193/api/status
+
+Return alarm's global status, as JSON
+
+
+
+## Alarm’s elements
+
+http://hostname:8193/api/elements
+
+Return alarm's elements as JSON
+
+
+
+## Alarm’s connection status
+
+http://hostname:8193/api/connection/status
+
+Return alarm's connection status as JSON
 
 
 
 # Sensors
 
+"Somfy Protexial IO Proxy" doesn't create any sensor in Hassio.
 
-
-A lot of sensors are created :
-
-- Global status will provide :
-  - Alarm (activate/unactivate)
-  - Alarm A (activate/unactivate)
-  - Alarm B (activate/unactivate)
-  - Alarm C (activate/unactivate)
-  - open/close state (true = at least one door open)
-  - alarm triggered (true = at least one element triggered alarm)
-  - communication state (true = at least one element have communication issue)
-  - box state (true = at least one element have box issue)
-  - battery state (true = at least one element have battery issue)
-  - GSM raw level (numeric)
-  - GSM DBM level (numeric)
-- each door sensor (typedo, typedovitre) will be named “Somfy - {element name} - Opened” and provide :
-  - open/close state (true/false)
-  - alarm triggered state (true/false)
-  - communication state (true/false)
-  - box state (true/false)
-  - battery state (true/false)
-
-It globally works well for my, but I still have some stability issue with web scrapping (sometimes the alarme is not responding, I guess scrapping every 5 seconds is too fast, will try with 10 seconds => can be configured in the addon)
-
-I will work on it in the next days.
+It exposes a REST API, consumed by "Somfy Protexial IO Gateway" (who creates sensors), see "Design" section to understand by.
 
 
 
-Also, It’s important to note that once the proxy add-on will work, it will be difficult to connect to the Alarm Web UI, since the proxy add-on do connect on the alarm, and try to reconnect if anything goes wrong (like a connection from alarm web UI, since only one user can be logged in at once)
+# Configuration
 
-I plan to release an “Emulator”, consuming “Gateway” REST API, and fixing this ennoying problem.
-
-
+This add-on requires to be configured.
 
 
 
-## Configuration
+You have to go to “Configuration” tab (same apply for "Somfy Protexial IO Gateway")
 
 
-
-My add-ons don’t rely on Somfy integration.
-
-For the Proxy, you have to go to “Configuration” tab (same apply for Gateway)
 
 Required informations are :
 
