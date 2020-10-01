@@ -1119,7 +1119,7 @@
           "lib/netcoreapp3.0/SomfyProtexialIO.Common.dll": {}
         }
       },
-      "SomfyProtexialIO.Implementations/1.7.10": {
+      "SomfyProtexialIO.Implementations/1.7.11": {
         "dependencies": {
           "Initia.Web": "1.2.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
@@ -1130,8 +1130,8 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Implementations.dll": {
-            "assemblyVersion": "1.7.10.0",
-            "fileVersion": "1.7.10.0"
+            "assemblyVersion": "1.7.11.0",
+            "fileVersion": "1.7.11.0"
           }
         },
         "compile": {
@@ -2005,7 +2005,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "SomfyProtexialIO.SDK": "1.4.2",
-          "SomfyProtexialIO.StateCache": "1.4.5"
+          "SomfyProtexialIO.StateCache": "1.4.7"
         },
         "runtime": {
           "SomfyProtexialIO.Proxy.Client.dll": {}
@@ -2023,7 +2023,7 @@
           "SomfyProtexialIO.Proxy.Client": "1.0.5",
           "SomfyProtexialIO.Proxy.Configuration": "1.4.0",
           "SomfyProtexialIO.SDK": "1.4.2",
-          "SomfyProtexialIO.StateCache": "1.4.5"
+          "SomfyProtexialIO.StateCache": "1.4.7"
         },
         "runtime": {
           "SomfyProtexialIO.Proxy.Common.dll": {}
@@ -2046,7 +2046,7 @@
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "SomfyProtexialIO.Proxy.Client": "1.0.5",
-          "SomfyProtexialIO.StateCache": "1.4.5"
+          "SomfyProtexialIO.StateCache": "1.4.7"
         },
         "runtime": {
           "SomfyProtexialIO.Proxy.MVC.dll": {}
@@ -2055,12 +2055,12 @@
           "SomfyProtexialIO.Proxy.MVC.dll": {}
         }
       },
-      "SomfyProtexialIO.StateCache/1.4.5": {
+      "SomfyProtexialIO.StateCache/1.4.7": {
         "dependencies": {
           "Castle.Core": "4.4.1",
           "Microsoft.Extensions.Options": "3.1.8",
           "Quartz": "3.1.0",
-          "SomfyProtexialIO.Implementations": "1.7.10",
+          "SomfyProtexialIO.Implementations": "1.7.11",
           "SomfyProtexialIO.Proxy.Configuration": "1.4.0",
           "SomfyProtexialIO.SDK": "1.4.2"
         },
@@ -4281,12 +4281,12 @@
       "path": "somfyprotexialio.common/1.4.4",
       "hashPath": "somfyprotexialio.common.1.4.4.nupkg.sha512"
     },
-    "SomfyProtexialIO.Implementations/1.7.10": {
+    "SomfyProtexialIO.Implementations/1.7.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cI7YBCMZsuCO4K2ChksnlRaN3aCbSvMtYxOj+c5qABQ5riBBo7YM+IsY6LEgCnbNTD6Tapr/W8cWn02qLHwQ7w==",
-      "path": "somfyprotexialio.implementations/1.7.10",
-      "hashPath": "somfyprotexialio.implementations.1.7.10.nupkg.sha512"
+      "sha512": "sha512-9QtIhIlBzGRjrp17uvxzVG3Fo6/H9GGGjWY5/HUoBqLfk/EKD4gGach+qFgtEgg0sxE2CjUrhGU+q4VYOT8aQw==",
+      "path": "somfyprotexialio.implementations/1.7.11",
+      "hashPath": "somfyprotexialio.implementations.1.7.11.nupkg.sha512"
     },
     "SomfyProtexialIO.SDK/1.4.2": {
       "type": "package",
@@ -4896,7 +4896,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SomfyProtexialIO.StateCache/1.4.5": {
+    "SomfyProtexialIO.StateCache/1.4.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,3 +1,21 @@
+# 0.6
+
+Added and improved logs
+
+Improved alarm connection job source code
+
+
+
+# 0.5
+
+Added logs when stopping add-on
+
+Quartz jobs are now unscheduled, when stopping add-on
+
+When Somfy Protexial IO elements are fetched them for the first time, details are outputted in logs
+
+
+
 # 0.4
 
 Fixed "'{item label}' doesn't exists" error in logs, causing whole elements fetch to fail.
