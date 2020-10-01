@@ -27,7 +27,7 @@
           "Initia.Mqtt.M2Mqtt": "1.2.2",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.8",
           "SomfyProtexialIO.Gateway.Common": "1.0.0",
-          "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant": "1.0.0",
+          "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant": "1.0.2",
           "SomfyProtexialIO.Gateway.SDK": "1.0.0",
           "SomfyProtexialIO.Proxy.Client": "1.0.5",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -777,7 +777,7 @@
           "lib/netcoreapp3.0/SomfyProtexialIO.Common.dll": {}
         }
       },
-      "SomfyProtexialIO.Implementations/1.7.10": {
+      "SomfyProtexialIO.Implementations/1.7.11": {
         "dependencies": {
           "Initia.Web": "1.2.0",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.8",
@@ -788,8 +788,8 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/SomfyProtexialIO.Implementations.dll": {
-            "assemblyVersion": "1.7.10.0",
-            "fileVersion": "1.7.10.0"
+            "assemblyVersion": "1.7.11.0",
+            "fileVersion": "1.7.11.0"
           }
         },
         "compile": {
@@ -800,7 +800,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "SomfyProtexialIO.SDK": "1.4.2",
-          "SomfyProtexialIO.StateCache": "1.4.5"
+          "SomfyProtexialIO.StateCache": "1.4.7"
         },
         "runtime": {
           "lib/netcoreapp3.1/SomfyProtexialIO.Proxy.Client.dll": {
@@ -838,19 +838,19 @@
           "lib/netcoreapp3.0/SomfyProtexialIO.SDK.dll": {}
         }
       },
-      "SomfyProtexialIO.StateCache/1.4.5": {
+      "SomfyProtexialIO.StateCache/1.4.7": {
         "dependencies": {
           "Castle.Core": "4.4.1",
           "Microsoft.Extensions.Options": "3.1.8",
           "Quartz": "3.1.0",
-          "SomfyProtexialIO.Implementations": "1.7.10",
+          "SomfyProtexialIO.Implementations": "1.7.11",
           "SomfyProtexialIO.Proxy.Configuration": "1.4.0",
           "SomfyProtexialIO.SDK": "1.4.2"
         },
         "runtime": {
           "lib/netcoreapp3.1/SomfyProtexialIO.StateCache.dll": {
-            "assemblyVersion": "1.4.5.0",
-            "fileVersion": "1.4.5.0"
+            "assemblyVersion": "1.4.7.0",
+            "fileVersion": "1.4.7.0"
           }
         },
         "compile": {
@@ -1660,7 +1660,7 @@
           "Quartz": "3.1.0",
           "SomfyProtexialIO.Gateway.PlugIns": "1.0.0",
           "SomfyProtexialIO.SDK": "1.4.2",
-          "SomfyProtexialIO.StateCache": "1.4.5"
+          "SomfyProtexialIO.StateCache": "1.4.7"
         },
         "runtime": {
           "SomfyProtexialIO.Gateway.Common.dll": {}
@@ -1684,7 +1684,7 @@
           "SomfyProtexialIO.Gateway.PlugIns.dll": {}
         }
       },
-      "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.0.0": {
+      "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.0.2": {
         "dependencies": {
           "Initia.HomeAssistant": "1.0.0",
           "Initia.Mqtt": "1.2.1",
@@ -1693,7 +1693,7 @@
           "SomfyProtexialIO.Gateway.PlugIns": "1.0.0",
           "SomfyProtexialIO.Gateway.SDK": "1.0.0",
           "SomfyProtexialIO.SDK": "1.4.2",
-          "SomfyProtexialIO.StateCache": "1.4.5"
+          "SomfyProtexialIO.StateCache": "1.4.7"
         },
         "runtime": {
           "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant.dll": {}
@@ -3713,12 +3713,12 @@
       "path": "somfyprotexialio.common/1.4.4",
       "hashPath": "somfyprotexialio.common.1.4.4.nupkg.sha512"
     },
-    "SomfyProtexialIO.Implementations/1.7.10": {
+    "SomfyProtexialIO.Implementations/1.7.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cI7YBCMZsuCO4K2ChksnlRaN3aCbSvMtYxOj+c5qABQ5riBBo7YM+IsY6LEgCnbNTD6Tapr/W8cWn02qLHwQ7w==",
-      "path": "somfyprotexialio.implementations/1.7.10",
-      "hashPath": "somfyprotexialio.implementations.1.7.10.nupkg.sha512"
+      "sha512": "sha512-9QtIhIlBzGRjrp17uvxzVG3Fo6/H9GGGjWY5/HUoBqLfk/EKD4gGach+qFgtEgg0sxE2CjUrhGU+q4VYOT8aQw==",
+      "path": "somfyprotexialio.implementations/1.7.11",
+      "hashPath": "somfyprotexialio.implementations.1.7.11.nupkg.sha512"
     },
     "SomfyProtexialIO.Proxy.Client/1.0.5": {
       "type": "package",
@@ -3741,12 +3741,12 @@
       "path": "somfyprotexialio.sdk/1.4.2",
       "hashPath": "somfyprotexialio.sdk.1.4.2.nupkg.sha512"
     },
-    "SomfyProtexialIO.StateCache/1.4.5": {
+    "SomfyProtexialIO.StateCache/1.4.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HyNimhJMigMDuiM+se1saWZfDdpwlMmX8Vkb1JU0Z3j7r6rm4HocdwiVWWa9SOn952/snCQ2pbvx/cRcsBauzQ==",
-      "path": "somfyprotexialio.statecache/1.4.5",
-      "hashPath": "somfyprotexialio.statecache.1.4.5.nupkg.sha512"
+      "sha512": "sha512-YPuDkMi7z3ZhZsDi3z/1MQxSBAEEOUbC91FopzzIgCPC07kzkkB7Vy+jUgfa0ZOr8neqL1meGqCCzcb3V2c6WA==",
+      "path": "somfyprotexialio.statecache/1.4.7",
+      "hashPath": "somfyprotexialio.statecache.1.4.7.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -4290,7 +4290,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.0.0": {
+    "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
