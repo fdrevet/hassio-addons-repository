@@ -1,8 +1,8 @@
-# Home Assistant Add-on: Somfy Protexial IO Proxy
+# Home Assistant Add-on: Somfy Protexial IO Gateway
 
-Connects to your [Somfy Protexial IO](https://www.somfypro.fr/assistance/alarme) alarm and provides a custom REST API, in order to interact in a simple and bidirectional way.
+Connects to the "Somfy protexial IO Proxy" add-on's REST API, add your [Somfy Protexial IO](https://www.somfypro.fr/assistance/alarme) devices as Home Assistant entities, and let you interact with them.
 
-:information_source: This plug-in does not allow you to interact with your alarm from Home Assistant, it is a prerequisite to allow the "Somfy Protexial IO Gateway" add-on to operate. 
+:information_source: This plug-in needs "Somfy protexial IO Proxy" to operate.
 
 ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armhf Architecture][armhf-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports i386 Architecture][i386-shield]
 
