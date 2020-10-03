@@ -17,8 +17,8 @@
     "MqttBroker": {
       "Hostname": "MQTT broker hostname or ip",
       "TcpPort": 1883,
-	  "Username": "MQTT broker optional username",
-	  "Password": "MQTT broker optional password"
+      "Username": "MQTT broker optional username",
+      "Password": "MQTT broker optional password"
     },
     "Proxy": {
       "Hostname": "Somfy Protexial IO Proxy hostname or ip",
