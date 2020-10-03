@@ -16,21 +16,43 @@
   "options": {
     "MqttBroker": {
       "Hostname": "MQTT broker hostname or ip",
-      "TcpPort": 1883
+      "TcpPort": 1883,
+	  "Username": "MQTT broker optional username",
+	  "Password": "MQTT broker optional password"
     },
     "Proxy": {
       "Hostname": "Somfy Protexial IO Proxy hostname or ip",
       "TcpPort": 8093
+    },
+    "Hassio": {
+      "MqttDiscoverPrefix": "homeassistant",
+      "EntitiesMqttPrefix": "somfy_",
+      "EntitiesMqttSuffix": "",
+      "EntitiesNamePrefix": "Somfy - ",
+      "EntitiesNameSuffix": "",
+      "ExposeGlobalStatus": "true",
+      "ExposeElements": "true"
     }
   },
   "schema": {
     "MqttBroker": {
       "Hostname": "str",
-      "TcpPort": "int"
+      "TcpPort": "int",
+	  "Username": "str?",
+	  "Password": "str?"
     },
     "Proxy": {
       "Hostname": "str",
       "TcpPort": "int"
+    },
+    "Hassio": {
+      "MqttDiscoverPrefix": "str?",
+      "EntitiesMqttPrefix": "str?",
+      "EntitiesMqttSuffix": "str?",
+      "EntitiesNamePrefix": "str?",
+      "EntitiesNameSuffix": "str?",
+      "ExposeGlobalStatus": "bool?",
+      "ExposeElements": "bool?"
     }
   }
 }
