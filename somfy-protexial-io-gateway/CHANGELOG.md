@@ -1,25 +1,23 @@
-# 0.3
+# Changelog
 
-Fixed typo (trigered => triggered) when generating global status entities
+## 0.3.0
 
-Improved source code
+- Fixed typo (trigered => triggered) when generating global status entities
 
-Added and improved logs
+- Improved source code
 
+- Added and improved logs
 
+## 0.2.0
 
-# 0.2
+- Fixed "Somfy Protexial IO" device creation (one per switch before)
 
-Fixed "Somfy Protexial IO" device creation (one per switch before)
+- Now unscheduling Quartz jobs, when stopping engine
 
-Now unscheduling Quartz jobs, when stopping engine
+- Added and improved logs
 
-Added and improved logs
+## 0.1.0
 
-
-
-# 0.1
-
-Initial release, working with my French Somfy Protexial IO alarm.
+- Initial release, working with my French Somfy Protexial IO alarm.
 
 
