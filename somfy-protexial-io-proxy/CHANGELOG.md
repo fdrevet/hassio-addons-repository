@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.7.0
+
+- Added Swagger (http://hostname:port/swagger/v1/swagger.json)
+- Added Swagger UI (http://hostname:port/swagger)
+- Updated third party libraries (Quartz)
+- Fixed multi language that was not working (WebScrappingSetting was not registered as singleton in IoC)
+  Checked with :
+
+  - connection
+  - global status fetching
+  - elements fetching
+  - alarm arming
+  - alarm disarming
+- Updated documentation (REST API, configuration)
+
 ## 0.6.0
 
 - Added and improved logs
