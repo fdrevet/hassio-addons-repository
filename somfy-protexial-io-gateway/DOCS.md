@@ -75,37 +75,117 @@ How it works ?
 
 
 # REST API
-
-
-
 “Somfy Protexial IO Gateway” doesn't expose REST API yet.
 
 
 
-# Sensors
+# Devices
 
+Once the "Somfy Protexial IO Gateway" is launched :
 
+* one Home Assistant "Somfy Protexial IO" device is created fro global status entities
 
-A lot of sensors are created :
+* one Home Assistant "Somfy Protexial IO {Somfy element type} {Somfy element name}" device is created, per Somfy element
 
-- Global status will provide :
-  - Alarm (activate/unactivate)
-  - Alarm A (activate/unactivate)
-  - Alarm B (activate/unactivate)
-  - Alarm C (activate/unactivate)
-  - open/close state (true = at least one door open)
-  - alarm triggered (true = at least one element triggered alarm)
-  - communication state (true = at least one element have communication issue)
-  - box state (true = at least one element have box issue)
-  - battery state (true = at least one element have battery issue)
-  - GSM raw level (numeric)
-  - GSM DBM level (numeric)
-- each door sensor (typedo, typedovitre) will be named “Somfy - {element name} - Opened” and provide :
-  - open/close state (true/false)
-  - alarm triggered state (true/false)
-  - communication state (true/false)
-  - box state (true/false)
-  - battery state (true/false)
+See entities section for more details.
+
+# Entities
+
+A lot of entities will be created once the "Somfy Protexial IO Gateway" is launched :
+
+## Global status
+
+Hass.io entities are created for global status, only if global status exposition is enabled (true by default)
+
+- 4 switches
+  - ![Lock][image-opened-lock] Alarm (true = armed, false = disarmed)
+  - ![Lock][image-opened-lock] Alarm A (true = armed, false = disarmed)
+  - ![Lock][image-opened-lock] Alarm B (true = armed, false = disarmed)
+  - ![Lock][image-opened-lock] Alarm C (true = armed, false = disarmed)
+- 2 sensors
+  - ![Signal][image-signal] GSM raw level :  0, 1, 2, 3 (3 = better signal)
+  - ![Signal][image-signal] GSM DBM level : ??, ??; ??; -94 (-94 = better signal)
+- 10 binary sensors
+  - ![Zen2][image-shield] Alarm (true = armed, false = disarmed)
+  - ![Zen2][image-shield] Alarm A (true = armed, false = disarmed)
+  - ![Zen2][image-shield] Alarm B (true = armed, false = disarmed)
+  - ![Zen2][image-shield] Alarm C (true = armed, false = disarmed)
+  - ![zz][image-battery] Open/close state (true = at least one door open)
+  - ![azeer][image-shield] Alarm triggered (true = at least one element triggered alarm)
+  - ![zzerfs][image-communication] Communication state (true = at least one element have communication issue)
+  - ![zzerfs][image-communication] GSM OK (true = GSM is present and connected)
+  - ![azeer][image-shield] Box state (true = at least one element have box issue)
+  - ![zz][image-battery] Battery state (true = at least one element have battery issue)
+
+## Elements
+
+Hass.io entities are created according to each type of Somfy element, only if element exposition is enabled (true by default)
+
+Not all types of items are yet managed, please contact me if your Somfy element is missing, or if a property is missing.
+
+### Door sensor
+
+- ![Alarm][image-shield] Alarm (true = alarm triggered)
+- ![Battery][image-battery] Battery (true = battery OK)
+- ![Box][image-shield] Box (true = box OK/not snatched)
+- ![Communication][image-communication] Communication (true = communication OK)
+- ![Closed][image-closed] ![Opened][image-opened] Door state (true = opened, false = closed)
+
+### Door window sensor
+
+- ![][image-shield] Alarm (true = box OK/not snatched)
+- ![][image-battery] Battery (true = battery OK)
+- ![][image-shield] Box (true = box OK/not snatched)
+- ![][image-communication] Communication (true = communication OK)
+- ![][image-closed] ![][image-opened] Door/Window state (true = opened, false = closed)
+
+### Keyboard
+
+- ![][image-battery] Battery (true = battery OK)
+- ![][image-shield] Box (true = box OK/not snatched)
+- ![][image-communication] Communication (true = communication OK)
+
+### Indoor siren
+
+* ![][image-battery] Battery (true = battery OK)
+* ![][image-shield] Box (true = box OK/not snatched)
+* ![][image-communication] Communication (true = communication OK)
+
+### Motion detector
+
+* ![azeer][image-shield] Alarm (true = alarm triggered)
+* ![][image-battery] Battery (true = battery OK)
+* ![][image-shield] Box (true = box OK/not snatched)
+* ![][image-communication] Communication (true = communication OK)
+* ![][image-motion] Motion (true = detected)
+
+### Motion detector (image)
+
+* ![azeer][image-shield] Alarm (true = alarm triggered)
+* ![zz][image-battery] Battery (true = battery OK)
+* ![azeer][image-shield] Box (true = box OK/not snatched)
+* ![zzerfs][image-communication] Communication (true = communication OK)
+* ![errt][image-motion] Motion (true = detected)
+
+### Outdoor siren
+
+* ![zz][image-battery] Battery (true = battery OK)
+* ![azeer][image-shield] Box (true = box OK/not snatched)
+* ![zzerfs][image-communication] Communication (true = communication OK)
+
+### Smoke detector
+
+* ![azeer][image-shield] Alarm (true = box OK/not snatched)
+* ![zz][image-battery] Battery (true = battery OK)
+* ![zzerfs][image-communication] Communication (true = communication OK)
+
+### Tahoma
+
+* ![azeer][image-shield] Alarm (true = box OK/not snatched)
+* ![zz][image-battery] Battery (true = battery OK)
+* ![zzerfs][image-communication] Communication (true = communication OK)
+
+# Stability
 
 It globally works well for my, but I still have some stability issue with web scrapping (sometimes the alarme is not responding, I guess scrapping every 5 seconds is too fast, will try with 10 seconds => can be configured in the addon)
 
@@ -116,10 +196,6 @@ I will work on it in the next days.
 Also, It’s important to note that once the proxy add-on will work, it will be difficult to connect to the Alarm Web UI, since the proxy add-on do connect on the alarm, and try to reconnect if anything goes wrong (like a connection from alarm web UI, since only one user can be logged in at once)
 
 I plan to release an “Emulator”, consuming “Gateway” REST API, and fixing this ennoying problem.
-
-
-
-
 
 # Configuration
 
@@ -137,4 +213,24 @@ You have to go to “Configuration” tab (same apply for "Somfy Protexial IO Pr
 
 Required informations are :
 
-- 
+
+
+
+[image-shield]: .\images\shield.png	"Shield"
+
+[image-battery]: .\images\battery.png	"Battery"
+
+[image-signal]: .\images\signal.png	"Signal"
+
+[image-lightning]: .\images\lightning.png	"Lightning"
+
+[image-opened-lock]: .\images\opened-lock.png	"Opened lock"
+
+[image-communication]: .\images\communication.png	"Communication"
+
+[image-opened]: .\images\opened.png	"Closed"
+
+[image-closed]: .\images\closed.png	"Opened"
+
+[image-motion]: .\images\motion.png	"Motion"
+
