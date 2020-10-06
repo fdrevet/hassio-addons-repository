@@ -82,6 +82,13 @@ I plan to release an “Emulator”, consuming “Gateway” REST API, and fixin
 
 
 
+# Known issues
+
+* When stoppping/restarting "Somfy Protexial IO Gateway" add-on on Rasperry PI, it can be necessary to physically reboot.
+* "Communication" entities are "Disconnected", when HASS.io is restarted
+
+
+
 # Prerequisites
 
 
@@ -146,6 +153,10 @@ Hassio:
   ExposeGlobalStatus: Indicates whether the Somfy Protexial IO global status should be exposed with HASS.io entities (optional, default : true)
   ExposeElements:  Indicates whether the Somfy Protexial IO elements should be exposed with HASS.io entities (optional, default : true)
 ```
+
+
+
+Keep in mind configuration names, they will be used as variables, with {}, in the next parts of documentation.
 
 
 
@@ -475,7 +486,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 Entity id : ```binary_sensor.{Entity name}```
 
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 
 
@@ -491,7 +502,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 Entity id : ```binary_sensor.{Entity name}```
 
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 
 
@@ -527,7 +538,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 Entity id : ```binary_sensor.{Entity name}```
 
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 
 
@@ -543,7 +554,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 Entity id : ```binary_sensor.{Entity name}```
 
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 
 
@@ -559,7 +570,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 Entity id : ```binary_sensor.{Entity name}```
 
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 
 
@@ -573,15 +584,13 @@ All Somfy element properties are creating a HASS.io binary sensor entity.s
 
 Entity id : ```binary_sensor.{Entity name}```
 
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 
 
 ## REST API
 
 “Somfy Protexial IO Gateway” doesn't expose REST API yet.
-
-
 
 
 
