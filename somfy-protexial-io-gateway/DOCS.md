@@ -428,7 +428,7 @@ Each HASS.io entity MQTT root topic will be constructed as follow :
 
 
 
-#### Door sensor (5) ![img](.\images\p_do.gif)
+#### Door sensor (5) ![img](./images/p_do.gif)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -442,7 +442,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Door window sensor (5) ![img](.\images\p_dovitre.gif)
+#### Door window sensor (5) ![img](./images/p_dovitre.gif)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -456,7 +456,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Keyboard (3) ![img](.\images\p_keyb.gif)
+#### Keyboard (3) ![img](./images/p_keyb.gif)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -468,7 +468,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Indoor siren (3) ![img](.\images\p_sirenint.gif)
+#### Indoor siren (3) ![img](./images/p_sirenint.gif)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -480,7 +480,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Motion detector (5) ![img](.\images\icon_camera_dm_on.gif)
+#### Motion detector (5) ![img](./images/icon_camera_dm_on.gif)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -494,7 +494,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Motion detector with photo (5) ![img](.\images\icon_camera_dm_on.gif)
+#### Motion detector with photo (5) ![img](./images/icon_camera_dm_on.gif)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -508,7 +508,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Outdoor siren (3) ![img](.\images\p_sirenext.gif)
+#### Outdoor siren (3) ![img](./images/p_sirenext.gif)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -575,21 +575,21 @@ Simply use "Alarm (All)" switch or binary sensor (you don't need to specify all 
 
 
 
-[image-shield]: .\images\shield.png	"Shield"
+[image-shield]: ./images/shield.png	"Shield"
 
-[image-battery]: .\images\battery.png	"Battery"
+[image-battery]: ./images/battery.png	"Battery"
 
-[image-signal]: .\images\signal.png	"Signal"
+[image-signal]: ./images/signal.png	"Signal"
 
-[image-lightning]: .\images\lightning.png	"Lightning"
+[image-lightning]: ./images/lightning.png	"Lightning"
 
-[image-opened-lock]: .\images\opened-lock.png	"Opened lock"
+[image-opened-lock]: ./images/opened-lock.png	"Opened lock"
 
-[image-communication]: .\images\communication.png	"Communication"
+[image-communication]: ./images/communication.png	"Communication"
 
-[image-opened]: .\images\opened.png	"Closed"
+[image-opened]: ./images/opened.png	"Closed"
 
-[image-closed]: .\images\closed.png	"Opened"
+[image-closed]: ./images/closed.png	"Opened"
 
-[image-motion]: .\images\motion.png	"Motion"
+[image-motion]: ./images/motion.png	"Motion"
 
