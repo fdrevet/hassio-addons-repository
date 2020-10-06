@@ -428,7 +428,7 @@ Each HASS.io entity MQTT root topic will be constructed as follow :
 
 
 
-#### Door sensor (5) ![img](./images/p_do.gif)
+#### Door sensor (5) ![img](https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/p_do.gif?raw=true)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -442,7 +442,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Door window sensor (5) ![img](./images/p_dovitre.gif)
+#### Door window sensor (5) ![img](https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/p_dovitre.gif?raw=true)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -456,7 +456,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Keyboard (3) ![img](./images/p_keyb.gif)
+#### Keyboard (3) ![img](https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/p_keyb.gif?raw=true)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -468,7 +468,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Indoor siren (3) ![img](./images/p_sirenint.gif)
+#### Indoor siren (3) ![img](https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/p_sirenint.gif?raw=true)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -480,7 +480,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Motion detector (5) ![img](./images/icon_camera_dm_on.gif)
+#### Motion detector (5) ![img](https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/icon_camera_dm_on.gif?raw=true)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -494,7 +494,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Motion detector with photo (5) ![img](./images/icon_camera_dm_on.gif)
+#### Motion detector with photo (5) ![img](https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/icon_camera_dm_on.gif?raw=true)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -508,7 +508,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Outdoor siren (3) ![img](./images/p_sirenext.gif)
+#### Outdoor siren (3) ![img](https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/p_sirenext.gif?raw=true)
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
@@ -575,21 +575,21 @@ Simply use "Alarm (All)" switch or binary sensor (you don't need to specify all 
 
 
 
-[image-shield]: ./images/shield.png	"Shield"
+[image-shield]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/shield.png?raw=true	"Shield"
 
-[image-battery]: ./images/battery.png	"Battery"
+[image-battery]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/battery.png?raw=true	"Battery"
 
-[image-signal]: ./images/signal.png	"Signal"
+[image-signal]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/signal.png?raw=true	"Signal"
 
-[image-lightning]: ./images/lightning.png	"Lightning"
+[image-lightning]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/lightning.png?raw=true	"Lightning"
 
-[image-opened-lock]: ./images/opened-lock.png	"Opened lock"
+[image-opened-lock]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/opened-lock.png?raw=true	"Opened lock"
 
-[image-communication]: ./images/communication.png	"Communication"
+[image-communication]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/communication.png?raw=true	"Communication"
 
-[image-opened]: ./images/opened.png	"Closed"
+[image-opened]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/opened.png?raw=true	"Closed"
 
-[image-closed]: ./images/closed.png	"Opened"
+[image-closed]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/closed.png?raw=true	"Opened"
 
-[image-motion]: ./images/motion.png	"Motion"
+[image-motion]: https://github.com/fdrevet/hassio-addons-repository/blob/master/somfy-protexial-io-gateway/images/motion.png?raw=true	"Motion"
 
