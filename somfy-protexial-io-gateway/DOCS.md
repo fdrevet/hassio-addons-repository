@@ -305,7 +305,7 @@ Somfy - Gsm Signal (DBM)
 | ![Shield][image-shield]                        | Box             | true = at least one element have box issue           | ```somfy_box```             |
 | ![Communication][image-communication]          | Communication   | true = at least one element have communication issue | ```somfy_communication```   |
 | ![Battery][image-battery]                      | Battery         | true = at least one element have battery issue       | ```somfy_battery```         |
-| ![Closed][image-closed]![Opened][image-opened] | Doors/Windows   | true = at least one door/window is opened            | ```somfy_doors_windows```   |
+| ![Closed][image-closed] ![Opened][image-opened] | Doors/Windows   | true = at least one door/window is opened            | ```somfy_doors_windows```   |
 | ![Communication][image-communication]          | GSM OK          | true = GSM is present and connected                  | ```somfy_gsm_ok```          |
 
 Entity id : ```binary_sensor.{Entity name}```
@@ -438,7 +438,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 | ![Battery][image-battery]                      | Battery         | true = battery OK, false = battery KO | ```battery```         |
 | ![Box][image-shield]                           | Box             | true = box OK/not snatched            | ```box```             |
 | ![Communication][image-communication]          | Communication   | true = communication OK               | ```communication```   |
-| ![Closed][image-closed]![Opened][image-opened] | Door state      | true = opened, false = closeds        | ```door_window```     |
+| ![Closed][image-closed] ![Opened][image-opened] | Door state      | true = opened, false = closeds        | ```door_window```     |
 
 
 
@@ -452,7 +452,7 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 | ![Battery][image-battery]                      | Battery           | true = battery OK, false = battery KO | ```battery```         |
 | ![Box][image-shield]                           | Box               | true = box OK/not snatched            | ```box```             |
 | ![Communication][image-communication]          | Communication     | true = communication OK               | ```communication```   |
-| ![Closed][image-closed]![Opened][image-opened] | Door/Window state | true = opened, false = closeds        | ```door_window```     |
+| ![Closed][image-closed] ![Opened][image-opened] | Door/Window state | true = opened, false = closeds        | ```door_window```     |
 
 
 
