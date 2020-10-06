@@ -1,6 +1,6 @@
 {
   "name": "Somfy Protexial IO - Gateway",
-  "version": "0.4",
+  "version": "0.4.1",
   "slug": "spiog",
   "description": "Consume Somfy Protexial IO Proxy's REST API, to update HASS.io through MQTT",
   "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],

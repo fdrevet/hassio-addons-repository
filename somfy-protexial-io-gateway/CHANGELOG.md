@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1
+
+- Upgraded documentation
+- Fixed GSM DBM values
+
 ## 0.4.0
 
 - A Hassio device is created for each Somfy elements, previously only a global Somfy Protexial IO device was created for global status entities

@@ -270,7 +270,7 @@ All HASS.io entities will belong to device "Somfy Protexial IO".
 Each HASS.io entity will be named as follow :
 
 ```
-{Entity prefix}{Global status property}{Entity suffix}
+{EntitiesNamePrefix}{Global status property}{EntitiesNameSuffix}
 ```
 
 Where :
@@ -310,7 +310,7 @@ Somfy - Gsm Signal (DBM)
 
 Entity id : ```binary_sensor.{Entity name}```
 
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 
 
@@ -327,7 +327,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 Entity id : ```sensor.{Entity name}```
 
-MQTT topic : ```homeassistant/sensor/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/sensor/{Entity name}```
 
 
 
@@ -343,7 +343,7 @@ MQTT topic : ```homeassistant/sensor/{Entity name}```
 
 Entity id : ```switch.{Entity name}```
 
-MQTT topic : ```homeassistant/switch/{Entity name}```
+MQTT topic : ```{MqttDiscoverPrefix}/switch/{Entity name}```
 
 
 
@@ -361,21 +361,21 @@ All HASS.io entities will belong to their device "Somfy Protexial IO {Somfy elem
 
 
 
-Not all Somfy elements are yet managed, please contact me if your Somfy element is missing, or if a property is missing.
+Please note that not all Somfy elements are yet managed, contact me if your Somfy element is missing, or if a property is missing.
 
  
 
 Each HASS.io entity name will be constructed as follow :
 
 ```
-{Entity prefix}{Element type} - {Entity label} - {Entity property}{Entity suffix}
+{EntitiesNamePrefix}{Element type} - {Entity label} - {Entity property}{EntitiesNameSuffix}
 ```
 
-* Entity prefix = "Somfy - " by default (can be configured)
+* EntitiesNamePrefix = "Somfy - " by default (can be configured)
 * Element type = name of Somfy element type in your alarm web ui (depends of configured language)
-* Entity property = name of Somfy element property (```Alarm triggered```, ```Battery, Box```, ```Communication```, ```Doors/Windows```, ```Gsm OK```, ```Gsm Signal```, ```Gsm Signal (DBM)```)
 * Element label = name that you gave to your Somfy element in alarm web ui
-* Entity prefix = "" by default (can be configured)
+* Entity property = name of Somfy element property (```Alarm triggered```, ```Battery, Box```, ```Communication```, ```Doors/Windows```, ```Gsm OK```, ```Gsm Signal```, ```Gsm Signal (DBM)```)
+* EntitiesNameSuffix = "" by default (can be configured)
 
 > So, with French language configuration, the "Bureau" door/window Somfy element will be named by default :
 >
@@ -388,7 +388,7 @@ Each HASS.io entity name will be constructed as follow :
 Each HASS.io entity id will be constructed as follow :
 
 ```
-{Entity prefix}{Element type} - {Entity label}{Entity suffix}
+{EntitiesNamePrefix}{Element type} - {Entity label}{EntitiesNameSuffix}
 ```
 
 * Entity prefix = "Somfy - " by default (can be configured)
@@ -411,17 +411,16 @@ Each HASS.io entity MQTT root topic will be constructed as follow :
 
 
 ```
-{MQTT discover prefix}/{MQTT entity type}/{MQTT entity prefix}{Somfy element type}_{Somfy element code}{MQTT entity suffix}
+{MqttDiscoverPrefix}/binary_sensor/{EntitiesMqttPrefix}{Entity code}_{Entity name}{EntitiesMqttSuffix}
 ```
 
-* MQTT discover prefix = "homeassistant" by default (can be configured)
-* MQTT Entity type = HASS.io entity type (```binary_sensor```, ```sensor```, ```switch```)
-* MQTT Entity prefix = "somfy_" by default (can be configured)
-* Somfy element type = ```type_dm```, ```type_dmv```, ```typedo```, ```typedovitre```, ```typekeyb```, ```typesirenext```, ```typesirenint```, ```typetahoma```, ```typetecfumee```
-* Somfy element code = Numeric Somfy element code
-* MQTT Entity prefix = "" by default (can be configured)
+* MqttDiscoverPrefix = see configuration
+* EntitiesMqttPrefix = see configuration
+* Entity code = numeric code of Somfy Protexial IO element
+* Entity name = see table
+* EntitiesMqttSuffix = see configuration
 
-> So, don't matter the language configuration is, the office door/window Somfy element MQTT root topic will be by default :
+> So, don't matter the language configuration is, the office door/window (code 2987263) Somfy element MQTT root topic will be by default :
 >
 > ```
 > homeassistant/binary_sensor/somfy_typedo_2987263
@@ -433,26 +432,13 @@ Each HASS.io entity MQTT root topic will be constructed as follow :
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
-| Icon                                           | Name            | Comment                               | Entity name                                               |
-| ---------------------------------------------- | --------------- | ------------------------------------- | --------------------------------------------------------- |
-| ![Alarm][image-shield]                         | Alarm triggered | true = alarm triggered                | ```alarm_triggered```                                     |
-| ![Battery][image-battery]                      | Battery         | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]                           | Box             | true = box OK/not snatched            |                                                           |
-| ![Communication][image-communication]          | Communication   | true = communication OK               |                                                           |
-| ![Closed][image-closed]![Opened][image-opened] | Door state      | true = opened, false = closeds        |                                                           |
-
-Entity id : ```binary_sensor.somfy_{Entity type}_{Entity name}```
-
-* Entity prefix = "Somfy - " by default (can be configured)
-* Element type = name of Somfy element type in your alarm web ui (depends of configured language)
-* Element name = see table
-* Entity prefix = "" by default (can be configured)
-
-MQTT topic : ```homeassistant/binary_sensor/{Entity code}```
-
-Where :
-
-* Entity code = numeric code of Somfy element
+| Icon                                           | Name            | Comment                               | Entity name           |
+| ---------------------------------------------- | --------------- | ------------------------------------- | --------------------- |
+| ![Alarm][image-shield]                         | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
+| ![Battery][image-battery]                      | Battery         | true = battery OK, false = battery KO | ```battery```         |
+| ![Box][image-shield]                           | Box             | true = box OK/not snatched            | ```box```             |
+| ![Communication][image-communication]          | Communication   | true = communication OK               | ```communication```   |
+| ![Closed][image-closed]![Opened][image-opened] | Door state      | true = opened, false = closeds        | ```door_window```     |
 
 
 
@@ -460,17 +446,13 @@ Where :
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
-| Icon                                           | Name              | Comment                               | Entity name                                               |
-| ---------------------------------------------- | ----------------- | ------------------------------------- | --------------------------------------------------------- |
-| ![Alarm][image-shield]                         | Alarm triggered   | true = alarm triggered                |                                                           |
-| ![Battery][image-battery]                      | Battery           | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]                           | Box               | true = box OK/not snatched            |                                                           |
-| ![Communication][image-communication]          | Communication     | true = communication OK               |                                                           |
-| ![Closed][image-closed]![Opened][image-opened] | Door/Window state | true = opened, false = closeds        |                                                           |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+| Icon                                           | Name              | Comment                               | Entity name           |
+| ---------------------------------------------- | ----------------- | ------------------------------------- | --------------------- |
+| ![Alarm][image-shield]                         | Alarm triggered   | true = alarm triggered                | ```alarm_triggered``` |
+| ![Battery][image-battery]                      | Battery           | true = battery OK, false = battery KO | ```battery```         |
+| ![Box][image-shield]                           | Box               | true = box OK/not snatched            | ```box```             |
+| ![Communication][image-communication]          | Communication     | true = communication OK               | ```communication```   |
+| ![Closed][image-closed]![Opened][image-opened] | Door/Window state | true = opened, false = closeds        | ```door_window```     |
 
 
 
@@ -478,15 +460,11 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
-| Icon                                  | Name          | Comment                               | Entity name                                               |
-| ------------------------------------- | ------------- | ------------------------------------- | --------------------------------------------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]                  | Box           | true = box OK/not snatched            |                                                           |
-| ![Communication][image-communication] | Communication | true = communication OK               |                                                           |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
+| Icon                                  | Name          | Comment                               | Entity name         |
+| ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
+| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```battery```       |
+| ![Box][image-shield]                  | Box           | true = box OK/not snatched            | ```box```           |
+| ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
 
 
 
@@ -494,15 +472,11 @@ MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
-| Icon                                  | Name          | Comment                               | Entity name                                               |
-| ------------------------------------- | ------------- | ------------------------------------- | --------------------------------------------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]                  | Box           | true = box OK/not snatched            |                                                           |
-| ![Communication][image-communication] | Communication | true = communication OK               |                                                           |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
+| Icon                                  | Name          | Comment                               | Entity name         |
+| ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
+| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```battery```       |
+| ![Box][image-shield]                  | Box           | true = box OK/not snatched            | ```box```           |
+| ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
 
 
 
@@ -510,17 +484,13 @@ MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
-| Icon                                  | Name            | Comment                               | Entity name                                               |
-| ------------------------------------- | --------------- | ------------------------------------- | --------------------------------------------------------- |
-| ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                |                                                           |
-| ![Battery][image-battery]             | Battery         | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]                  | Box             | true = box OK/not snatched            |                                                           |
-| ![Communication][image-communication] | Communication   | true = communication OK               |                                                           |
-| ![Motion][image-motion]               | Motion          | true = detected                       |                                                           |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+| Icon                                  | Name            | Comment                               | Entity name           |
+| ------------------------------------- | --------------- | ------------------------------------- | --------------------- |
+| ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
+| ![Battery][image-battery]             | Battery         | true = battery OK, false = battery KO | ```battery```         |
+| ![Box][image-shield]                  | Box             | true = box OK/not snatched            | ```box```             |
+| ![Communication][image-communication] | Communication   | true = communication OK               | ```communication```   |
+| ![Motion][image-motion]               | Motion          | true = detected                       | ```motion```          |
 
 
 
@@ -528,17 +498,13 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
-| Icon                                  | Name            | Comment                               | Entity name                                               |
-| ------------------------------------- | --------------- | ------------------------------------- | --------------------------------------------------------- |
-| ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                |                                                           |
-| ![Battery][image-battery]             | Battery         | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]                  | Box             | true = box OK/not snatched            |                                                           |
-| ![Communication][image-communication] | Communication   | true = communication OK               |                                                           |
-| ![Motion][image-motion]               | Motion          | true = detected                       |                                                           |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
+| Icon                                  | Name            | Comment                               | Entity name           |
+| ------------------------------------- | --------------- | ------------------------------------- | --------------------- |
+| ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
+| ![Battery][image-battery]             | Battery         | true = battery OK, false = battery KO | ```battery```         |
+| ![Box][image-shield]                  | Box             | true = box OK/not snatched            | ```box```             |
+| ![Communication][image-communication] | Communication   | true = communication OK               | ```communication```   |
+| ![Motion][image-motion]               | Motion          | true = detected                       | ```motion```          |
 
 
 
@@ -546,15 +512,11 @@ MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
-| Icon                                  | Name          | Comment                               | Entity name                                               |
-| ------------------------------------- | ------------- | ------------------------------------- | --------------------------------------------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Shield][image-shield]               | Box           | true = box OK/not snatched            | ```somfy_{Element type}_{Element Name}_box```             |
-| ![Communication][image-communication] | Communication | true = communication OK               | ```somfy_{Element type}_{Element Name}_communication```   |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
+| Icon                                  | Name          | Comment                               | Entity name         |
+| ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
+| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```battery```       |
+| ![Shield][image-shield]               | Box           | true = box OK/not snatched            | ```box```           |
+| ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
 
 
 
@@ -562,15 +524,11 @@ MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 All Somfy element properties are creating a HASS.io binary sensor entity.
 
-| Icon                                  | Name          | Comment                               | Entity name |
-| ------------------------------------- | ------------- | ------------------------------------- | ----------- |
-| ![Alarm][image-shield]                | Alarm         | true = box OK/not snatched            |             |
-| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO |             |
-| ![Communication][image-communication] | Communication | true = communication OK               |             |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
+| Icon                                  | Name          | Comment                               | Entity name         |
+| ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
+| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```battery```       |
+| ![Alarm][image-shield]                | Box           | true = box OK/not snatched            | ```box```           |
+| ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
 
 
 
@@ -578,13 +536,9 @@ MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 All Somfy element properties are creating a HASS.io binary sensor entity.s
 
-| Icon                                  | Name          | Comment                 | Entity name |
-| ------------------------------------- | ------------- | ----------------------- | ----------- |
-| ![Communication][image-communication] | Communication | true = communication OK |             |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
+| Icon                                  | Name          | Comment                 | Entity name         |
+| ------------------------------------- | ------------- | ----------------------- | ------------------- |
+| ![Communication][image-communication] | Communication | true = communication OK | ```communication``` |
 
 
 
