@@ -4,7 +4,11 @@ Welcome to "Somfy Protexial IO Gateway" add-on !
 
 # Why this add-on ?
 
-I don't own a Tahoma Box and don't need/want one for the moment. So, I wrote this add-on in order to let Hass.IO and my alarm communicate bidirectionally.
+I don't own a Tahoma Box and don't need/want one for the moment.
+
+
+
+So, I wrote this add-on in order to let Hass.IO and my alarm communicate bidirectionally.
 
 
 
@@ -38,7 +42,7 @@ All the data are kept on your HASS.io installation.
 
 ## Warranty
 
-THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+There is no warranty for the program, to the extent permitted by applicable law. except when otherwise stated in writing the copyright holders and/or other parties provide the program “as is” without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the program is with you. Should the program prove defective, you assume the cost of all necessary servicing, repair or correction.
 
 
 
@@ -78,20 +82,61 @@ I plan to release an “Emulator”, consuming “Gateway” REST API, and fixin
 
 
 
-# MQTT Broker connection
+# Prerequisites
 
 
 
+## Somfy Protexial IO Proxy connection
+
+"Somfy Protexial IO Gateway" add-on requires a valid "Somfy Protexial IO Proxy" connection.
 
 
 
-
-# REST API
-“Somfy Protexial IO Gateway” doesn't expose REST API yet.
+"Somfy Protexial IO Proxy" is an add-on who act like a proxy between physical alarm and consumers (like "Somfy Protexial IO Gateway")
 
 
 
-# Hass.io Devices
+## MQTT Broker connection
+
+"Somfy Protexial IO Gateway" add-on requires a valid MQTT broker connection.
+
+
+
+You can either use your own MQTT broker, or install a MQTT broker add-on such as "Mosquitto".
+
+
+
+Plase note that only insecure connection are allowed yet, you can still specify an user name a password.
+
+
+
+I plan to add TLS connection in a future version.
+
+
+
+# Configuration
+
+"Somfy Protexial IO Gateway" add-on doesn't rely on any Somfy integration.
+
+
+
+This add-on requires to be configured.
+
+
+
+You have to go to “Configuration” tab (same apply for "Somfy Protexial IO Proxy")
+
+
+
+Required informations are :
+
+
+
+# Launch
+
+
+
+## Hass.io devices
 
 Once the "Somfy Protexial IO Gateway" is launched :
 
@@ -105,13 +150,13 @@ See entities section for more details.
 
 
 
-# Hass.io Entities
+## Hass.io Entities
 
-A lot of entities will be created once the "Somfy Protexial IO Gateway" is launched.
+Once the "Somfy Protexial IO Gateway" is launched, Hass.io entities are created.
 
 
 
-## Somfy Global status
+#### for Somfy Global status
 
 One Hass.io entity is created per Somfy global status property, only if global status exposition is enabled in configuration (true by default)
 
@@ -146,7 +191,7 @@ Somfy - Gsm Signal (DBM)
 
 
 
-### Binary sensors (10)
+#### Binary sensors (10)
 
 
 | Icon                                           | Name            | Comment                                              | Entity name                 |
@@ -168,11 +213,11 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-\\* Only one "zone" can be armed at once
+\* Only one "zone" can be armed at once
 
 
 
-### Sensors (2)
+#### Sensors (2)
 
 | Icon                    | Name             | Comment                                  | Entity name                |
 | ----------------------- | ---------------- | ---------------------------------------- | -------------------------- |
@@ -186,14 +231,14 @@ MQTT topic : ```homeassistant/sensor/{Entity name}```
 
 
 
-### Switches (4)
+#### Switches (4)
 
-| Icon | Name | Comment | Entity name                  |
-| ---- | ---- | ------- | ---------------------------- |
-| ![Lock][image-opened-lock]     | Alarm (all) | true = all zone armed * | ```somfy_alarm_all``` |
-|![Lock][image-opened-lock]      | Alarm (A) | true = zone A armed *   | ```somfy_alarm_a```   |
-| ![Lock][image-opened-lock]     | Alarm (B) | true = zone B armed * | ```somfy_alarm_b```   |
-| ![Lock][image-opened-lock] | Alarm (C) | true = zone C armed *   | ```somfy_alarm_c``` |
+| Icon                       | Name        | Comment                 | Entity name           |
+| -------------------------- | ----------- | ----------------------- | --------------------- |
+| ![Lock][image-opened-lock] | Alarm (all) | true = all zone armed * | ```somfy_alarm_all``` |
+| ![Lock][image-opened-lock] | Alarm (A)   | true = zone A armed *   | ```somfy_alarm_a```   |
+| ![Lock][image-opened-lock] | Alarm (B)   | true = zone B armed *   | ```somfy_alarm_b```   |
+| ![Lock][image-opened-lock] | Alarm (C)   | true = zone C armed *   | ```somfy_alarm_c```   |
 
 Entity id : ```switch.{Entity name}```
 
@@ -205,7 +250,7 @@ MQTT topic : ```homeassistant/switch/{Entity name}```
 
 
 
-## Somfy Elements
+### for Somfy Elements
 
 Hass.io entities are created according to each type of Somfy element, only if element exposition is enabled in configuration (true by default)
 
@@ -283,7 +328,7 @@ Each Hass.io entity MQTT root topic will be constructed as follow :
 
  
 
-### Door sensor (5)
+#### Door sensor (5)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -310,17 +355,17 @@ Where :
 
 
 
-### Door window sensor (5)
+#### Door window sensor (5)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
-| Icon                                           | Name          | Comment                        | Entity name |
-| ---------------------------------------------- | ------------- | ------------------------------ | ----------- |
-| ![Alarm][image-shield]                         | Alarm triggered | true = alarm triggered         |             |
-| ![Battery][image-battery]                      | Battery       | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]                           | Box           | true = box OK/not snatched     |             |
-| ![Communication][image-communication]          | Communication | true = communication OK        |             |
-| ![Closed][image-closed]![Opened][image-opened] | Door/Window state    | true = opened, false = closeds |             |
+| Icon                                           | Name              | Comment                               | Entity name                                               |
+| ---------------------------------------------- | ----------------- | ------------------------------------- | --------------------------------------------------------- |
+| ![Alarm][image-shield]                         | Alarm triggered   | true = alarm triggered                |                                                           |
+| ![Battery][image-battery]                      | Battery           | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
+| ![Box][image-shield]                           | Box               | true = box OK/not snatched            |                                                           |
+| ![Communication][image-communication]          | Communication     | true = communication OK               |                                                           |
+| ![Closed][image-closed]![Opened][image-opened] | Door/Window state | true = opened, false = closeds        |                                                           |
 
 Entity id : ```binary_sensor.{Entity name}```
 
@@ -328,23 +373,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-### Keyboard (3)
-
-All Somfy element properties are creating a Hass.io binary sensor entity.
-
-| Icon                                  | Name          | Comment                               | Entity name                                               |
-| ------------------------------------- | ------------- | ------------------------------------- | --------------------------------------------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]                  | Box           | true = box OK/not snatched            |                                                           |
-| ![Communication][image-communication] | Communication | true = communication OK               |                                                           |
-
-Entity id : ```binary_sensor.{Entity name}```
-
-MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
-
-
-
-### Indoor siren (3)
+#### Keyboard (3)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -360,7 +389,23 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-### Motion detector (5)
+#### Indoor siren (3)
+
+All Somfy element properties are creating a Hass.io binary sensor entity.
+
+| Icon                                  | Name          | Comment                               | Entity name                                               |
+| ------------------------------------- | ------------- | ------------------------------------- | --------------------------------------------------------- |
+| ![Battery][image-battery]             | Battery       | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
+| ![Box][image-shield]                  | Box           | true = box OK/not snatched            |                                                           |
+| ![Communication][image-communication] | Communication | true = communication OK               |                                                           |
+
+Entity id : ```binary_sensor.{Entity name}```
+
+MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
+
+
+
+#### Motion detector (5)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -378,17 +423,17 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-### Motion detector with photo (5)
+#### Motion detector with photo (5)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
-| Icon | Name | Comment | Entity name |
-| ---- | ---- | ------- | ----------- |
-|  ![Alarm][image-shield]    | Alarm triggered | true = alarm triggered |             |
-| ![Battery][image-battery]     | Battery | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
-| ![Box][image-shield]     | Box | true = box OK/not snatched |             |
-| ![Communication][image-communication]     | Communication | true = communication OK |             |
-| ![Motion][image-motion]     | Motion | true = detected |             |
+| Icon                                  | Name            | Comment                               | Entity name                                               |
+| ------------------------------------- | --------------- | ------------------------------------- | --------------------------------------------------------- |
+| ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                |                                                           |
+| ![Battery][image-battery]             | Battery         | true = battery OK, false = battery KO | ```somfy_{Element type}_{Element Name}_alarm_triggered``` |
+| ![Box][image-shield]                  | Box             | true = box OK/not snatched            |                                                           |
+| ![Communication][image-communication] | Communication   | true = communication OK               |                                                           |
+| ![Motion][image-motion]               | Motion          | true = detected                       |                                                           |
 
 Entity id : ```binary_sensor.{Entity name}```
 
@@ -396,7 +441,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-### Outdoor siren (3)
+#### Outdoor siren (3)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -412,7 +457,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-### Smoke detector (3)
+#### Smoke detector (3)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -428,13 +473,13 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-### Tahoma (1)
+#### Tahoma (1)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.s
 
-| Icon | Name | Comment | Entity name |
-| ---- | ---- | ------- | ----------- |
-| ![Communication][image-communication]     | Communication | true = communication OK |             |
+| Icon                                  | Name          | Comment                 | Entity name |
+| ------------------------------------- | ------------- | ----------------------- | ----------- |
+| ![Communication][image-communication] | Communication | true = communication OK |             |
 
 Entity id : ```binary_sensor.{Entity name}```
 
@@ -442,21 +487,33 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-# Configuration
+## REST API
 
-This add-on doesn't rely on any Somfy integration.
-
-
-
-This add-on requires to be configured.
+“Somfy Protexial IO Gateway” doesn't expose REST API yet.
 
 
 
-You have to go to “Configuration” tab (same apply for "Somfy Protexial IO Proxy")
+
+
+# Misc
 
 
 
-Required informations are :
+## Alarm panel integration
+
+You can either use [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/), [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/)
+
+
+
+### Manual Alarm Control Panel
+
+"Somfy Protexial IO Gateway" can be easily used with [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/) and some automation, as described.
+
+
+
+### MQTT Alarm Control Panel
+
+"Somfy Protexial IO Gateway" is not yet compatible with [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt), stay in touch.
 
 
 
