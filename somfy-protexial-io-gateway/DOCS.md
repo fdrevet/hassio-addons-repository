@@ -136,6 +136,27 @@ Required informations are :
 
 
 
+## What happens
+
+
+
+When "Somfy Protexial IO Gateway" is launched :
+
+* it connects to MQTT broker
+* and connects to "Somfy Protexial IO Proxy"
+
+
+
+Once both connections are successful, it :
+
+* fetch global status and elements details from "Somfy Protexial IO Proxy"
+* create Hass.io devices
+
+* create Hass.io entities
+* constantly update Hass.io entities according to states fetched from "Somfy Protexial IO Proxy"
+
+
+
 ## Hass.io devices
 
 Once the "Somfy Protexial IO Gateway" is launched :
@@ -152,11 +173,14 @@ See entities section for more details.
 
 ## Hass.io Entities
 
-Once the "Somfy Protexial IO Gateway" is launched, Hass.io entities are created.
+Once the "Somfy Protexial IO Gateway" is launched, Hass.io entities are created :
+
+* for Somfy Protexial IO global status
+* for Somfy Protexial IO elements
 
 
 
-#### for Somfy Global status
+#### Somfy Global status
 
 One Hass.io entity is created per Somfy global status property, only if global status exposition is enabled in configuration (true by default)
 
@@ -250,7 +274,7 @@ MQTT topic : ```homeassistant/switch/{Entity name}```
 
 
 
-### for Somfy Elements
+### Somfy Elements
 
 Hass.io entities are created according to each type of Somfy element, only if element exposition is enabled in configuration (true by default)
 
