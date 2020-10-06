@@ -320,10 +320,10 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 #### Sensors (2)
 
-| Icon                    | Name             | Comment                                  | Entity name                |
-| ----------------------- | ---------------- | ---------------------------------------- | -------------------------- |
-| ![Signal][image-signal] | GSM Signal       | raw level 0, 1, 2, 3 (3 = better signal) | ```somfy_gsm_signal```     |
-| ![Signal][image-signal] | GSM Signal (DBM) | ??, ??; ??; -94 (-94 = better signal)    | ```somfy_gsm_signal_dbm``` |
+| Icon                    | Name             | Comment                                                      | Entity name                |
+| ----------------------- | ---------------- | ------------------------------------------------------------ | -------------------------- |
+| ![Signal][image-signal] | GSM Signal       | raw level : 0, 1, 2, 3, 4, 5 (5 = better signal)             | ```somfy_gsm_signal```     |
+| ![Signal][image-signal] | GSM Signal (DBM) | Arbitrary DBM level : -70, -76, -83, -89, -96, -102 (-102 = better signal) | ```somfy_gsm_signal_dbm``` |
 
 Entity id : ```sensor.{Entity name}```
 
