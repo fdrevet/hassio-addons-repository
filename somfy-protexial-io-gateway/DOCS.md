@@ -350,9 +350,9 @@ Each Hass.io entity MQTT root topic will be constructed as follow :
 > homeassistant/binary_sensor/somfy_typedo_2987263
 > ```
 
- 
 
-#### Door sensor (5)
+
+#### Door sensor (5) ![img](.\images\p_do.gif)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -379,7 +379,7 @@ Where :
 
 
 
-#### Door window sensor (5)
+#### Door window sensor (5) ![img](.\images\p_dovitre.gif)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -397,7 +397,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-#### Keyboard (3)
+#### Keyboard (3) ![img](.\images\p_keyb.gif)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -413,7 +413,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-#### Indoor siren (3)
+#### Indoor siren (3) ![img](.\images\p_sirenint.gif)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -429,7 +429,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-#### Motion detector (5)
+#### Motion detector (5) ![img](.\images\icon_camera_dm_on.gif)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -447,7 +447,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-#### Motion detector with photo (5)
+#### Motion detector with photo (5) ![img](.\images\icon_camera_dm_on.gif)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
@@ -465,7 +465,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 
 
-#### Outdoor siren (3)
+#### Outdoor siren (3) ![img](.\images\p_sirenext.gif)
 
 All Somfy element properties are creating a Hass.io binary sensor entity.
 
