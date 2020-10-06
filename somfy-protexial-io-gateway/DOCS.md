@@ -8,7 +8,7 @@ I don't own a Tahoma Box and don't need/want one for the moment.
 
 
 
-So, I wrote this add-on in order to let Hass.IO and my alarm communicate bidirectionally.
+So, I wrote this add-on in order to let HASS.io and my alarm communicate bidirectionally.
 
 
 
@@ -28,9 +28,9 @@ I don't work for Somfy Group or am affiliated with them in any way.
 
 ## Privacy
 
-I do not collect data or personal information.
+This add-on doesn't collect any data or personal information.
 
-All the data are kept on your HASS.io installation.
+All your data is stored on your HASSio installation, and on the MQTT broker that you have chosen.
 
 
 
@@ -116,19 +116,87 @@ I plan to add TLS connection in a future version.
 
 # Configuration
 
-"Somfy Protexial IO Gateway" add-on doesn't rely on any Somfy integration.
+This add-on needs to be configured before being started.
 
 
 
-This add-on requires to be configured.
+You have to go to “Configuration” tab.
 
 
 
-You have to go to “Configuration” tab (same apply for "Somfy Protexial IO Proxy")
+## Available options
+
+Here are the available options :
+
+```yaml
+MqttBroker:
+  Hostname: MQTT broker hostname or IP (should be your HASS.io hostname)
+  TcpPort: MQTT broker TCP port (optional, default : 1883)
+  Username: MQTT broker username used to connect (optional)
+  Password: MQTT broker password used to connect (optional)
+Proxy:
+  Hostname: Somfy Protexial IO Proxy hostname or IP (should be your HASS.io hostname)
+  TcpPort: Somfy Protexial IO Proxy TCP port (optional, default : 8093)
+Hassio:
+  MqttDiscoverPrefix: MQTT discover prefix used by HASS.io to discover MQTT entities (optional, default : 'homeassistant')
+  EntitiesMqttPrefix: MQTT prefix for entity name (optional, default : 'somfy_')
+  EntitiesMqttSuffix: MQTT suffix for entity name (optional, default : '')
+  EntitiesNamePrefix: HASS.io previx for entity name (optional, default : 'Somfy - ')
+  EntitiesNameSuffix: HASS.io suffix for entity name (optional, default : '')
+  ExposeGlobalStatus: Indicates whether the Somfy Protexial IO global status should be exposed with HASS.io entities (optional, default : true)
+  ExposeElements:  Indicates whether the Somfy Protexial IO elements should be exposed with HASS.io entities (optional, default : true)
+```
 
 
 
-Required informations are :
+## Fictitious example
+
+And a fictitious example :
+
+```yaml
+MqttBroker:
+  Hostname: your-broker
+  Username: homeassistant
+  Password: **********
+Proxy:
+  Hostname: your-somfy-protexial-io-proxy
+Hassio:
+  MqttDiscoverPrefix: homeassistant
+  EntitiesMqttPrefix: somfy_
+  EntitiesMqttSuffix: ''
+  EntitiesNamePrefix: 'Somfy - '
+  EntitiesNameSuffix: ''
+  ExposeGlobalStatus: 'true'
+  ExposeElements: 'true'
+```
+
+
+
+## Fictitious example (mandatory settings)
+
+Minimal fictitious example without optional settings :
+
+```yaml
+MqttBroker:
+  Hostname: yourbroker
+  Username: homeassistant
+  Password: **********
+Proxy:
+  Hostname: your-somfy-protexial-io-proxy
+```
+
+
+
+## Fictitious example (mandatory settings, no credentials)
+
+Minimal fictitious example without optional settings and credentials :
+
+```
+MqttBroker:
+  Hostname: yourbroker
+Proxy:
+  Hostname: your-somfy-protexial-io-proxy
+```
 
 
 
@@ -137,8 +205,6 @@ Required informations are :
 
 
 ## What happens
-
-
 
 When "Somfy Protexial IO Gateway" is launched :
 
@@ -150,14 +216,14 @@ When "Somfy Protexial IO Gateway" is launched :
 Once both connections are successful, it :
 
 * fetch global status and elements details from "Somfy Protexial IO Proxy"
-* create Hass.io devices
+* create HASS.io devices
 
-* create Hass.io entities
-* constantly update Hass.io entities according to states fetched from "Somfy Protexial IO Proxy"
+* create HASS.io entities
+* constantly update HASS.io entities according to states fetched from "Somfy Protexial IO Proxy"
 
 
 
-## Hass.io devices
+## HASS.io devices
 
 Once the "Somfy Protexial IO Gateway" is launched :
 
@@ -171,9 +237,9 @@ See entities section for more details.
 
 
 
-## Hass.io Entities
+## HASS.io Entities
 
-Once the "Somfy Protexial IO Gateway" is launched, Hass.io entities are created :
+Once the "Somfy Protexial IO Gateway" is launched, HASS.io entities are created :
 
 * for Somfy Protexial IO global status
 * for Somfy Protexial IO elements
@@ -182,15 +248,15 @@ Once the "Somfy Protexial IO Gateway" is launched, Hass.io entities are created 
 
 #### Somfy Global status
 
-One Hass.io entity is created per Somfy global status property, only if global status exposition is enabled in configuration (true by default)
+One HASS.io entity is created per Somfy global status property, only if global status exposition is enabled in configuration (true by default)
 
 
 
-All Hass.io entities will belong to device "Somfy Protexial IO".
+All HASS.io entities will belong to device "Somfy Protexial IO".
 
 
 
-Each Hass.io entity will be named as follow :
+Each HASS.io entity will be named as follow :
 
 ```
 {Entity prefix}{Global status property}{Entity suffix}
@@ -206,7 +272,7 @@ Where :
 
 
 
-So, not matter language is configured, the GSM signal (DBM) Hass.io entity full name will be :
+So, not matter language is configured, the GSM signal (DBM) HASS.io entity full name will be :
 
 ```
 Somfy - Gsm Signal (DBM)
@@ -276,11 +342,11 @@ MQTT topic : ```homeassistant/switch/{Entity name}```
 
 ### Somfy Elements
 
-Hass.io entities are created according to each type of Somfy element, only if element exposition is enabled in configuration (true by default)
+HASS.io entities are created according to each type of Somfy element, only if element exposition is enabled in configuration (true by default)
 
 
 
-All Hass.io entities will belong to their device "Somfy Protexial IO {Somfy element type} {Somfy element name}".
+All HASS.io entities will belong to their device "Somfy Protexial IO {Somfy element type} {Somfy element name}".
 
 
 
@@ -288,7 +354,7 @@ Not all Somfy elements are yet managed, please contact me if your Somfy element 
 
  
 
-Each Hass.io entity name will be constructed as follow :
+Each HASS.io entity name will be constructed as follow :
 
 ```
 {Entity prefix}{Element type} - {Entity label} - {Entity property}{Entity suffix}
@@ -308,7 +374,7 @@ Each Hass.io entity name will be constructed as follow :
 
  
 
-Each Hass.io entity id will be constructed as follow :
+Each HASS.io entity id will be constructed as follow :
 
 ```
 {Entity prefix}{Element type} - {Entity label}{Entity suffix}
@@ -330,7 +396,7 @@ Each Hass.io entity id will be constructed as follow :
 
 
 
-Each Hass.io entity MQTT root topic will be constructed as follow :
+Each HASS.io entity MQTT root topic will be constructed as follow :
 
 
 ```
@@ -338,7 +404,7 @@ Each Hass.io entity MQTT root topic will be constructed as follow :
 ```
 
 * MQTT discover prefix = "homeassistant" by default (can be configured)
-* MQTT Entity type = Hass.io entity type (```binary_sensor```, ```sensor```, ```switch```)
+* MQTT Entity type = HASS.io entity type (```binary_sensor```, ```sensor```, ```switch```)
 * MQTT Entity prefix = "somfy_" by default (can be configured)
 * Somfy element type = ```type_dm```, ```type_dmv```, ```typedo```, ```typedovitre```, ```typekeyb```, ```typesirenext```, ```typesirenint```, ```typetahoma```, ```typetecfumee```
 * Somfy element code = Numeric Somfy element code
@@ -354,7 +420,7 @@ Each Hass.io entity MQTT root topic will be constructed as follow :
 
 #### Door sensor (5) ![img](.\images\p_do.gif)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.
+All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                           | Name            | Comment                               | Entity name                                               |
 | ---------------------------------------------- | --------------- | ------------------------------------- | --------------------------------------------------------- |
@@ -381,7 +447,7 @@ Where :
 
 #### Door window sensor (5) ![img](.\images\p_dovitre.gif)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.
+All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                           | Name              | Comment                               | Entity name                                               |
 | ---------------------------------------------- | ----------------- | ------------------------------------- | --------------------------------------------------------- |
@@ -399,7 +465,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 #### Keyboard (3) ![img](.\images\p_keyb.gif)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.
+All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name                                               |
 | ------------------------------------- | ------------- | ------------------------------------- | --------------------------------------------------------- |
@@ -415,7 +481,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 #### Indoor siren (3) ![img](.\images\p_sirenint.gif)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.
+All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name                                               |
 | ------------------------------------- | ------------- | ------------------------------------- | --------------------------------------------------------- |
@@ -431,7 +497,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 #### Motion detector (5) ![img](.\images\icon_camera_dm_on.gif)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.
+All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name            | Comment                               | Entity name                                               |
 | ------------------------------------- | --------------- | ------------------------------------- | --------------------------------------------------------- |
@@ -449,7 +515,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 #### Motion detector with photo (5) ![img](.\images\icon_camera_dm_on.gif)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.
+All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name            | Comment                               | Entity name                                               |
 | ------------------------------------- | --------------- | ------------------------------------- | --------------------------------------------------------- |
@@ -467,7 +533,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 #### Outdoor siren (3) ![img](.\images\p_sirenext.gif)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.
+All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name                                               |
 | ------------------------------------- | ------------- | ------------------------------------- | --------------------------------------------------------- |
@@ -483,7 +549,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 #### Smoke detector (3)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.
+All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name |
 | ------------------------------------- | ------------- | ------------------------------------- | ----------- |
@@ -499,7 +565,7 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 #### Tahoma (1)
 
-All Somfy element properties are creating a Hass.io binary sensor entity.s
+All Somfy element properties are creating a HASS.io binary sensor entity.s
 
 | Icon                                  | Name          | Comment                 | Entity name |
 | ------------------------------------- | ------------- | ----------------------- | ----------- |
@@ -525,13 +591,17 @@ MQTT topic : ```homeassistant/binary_sensor/{Entity name}```
 
 ## Alarm panel integration
 
-You can either use [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/), [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/)
+You can use [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/).
+
+[MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/) is not available yet.
 
 
 
 ### Manual Alarm Control Panel
 
 "Somfy Protexial IO Gateway" can be easily used with [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/) and some automation, as described.
+
+Simply use "Alarm (All)" switch or binary sensor (you don't need to specify all entities, unless if you don't expose global status)
 
 
 
