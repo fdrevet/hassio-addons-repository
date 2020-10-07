@@ -27,7 +27,7 @@
           "Initia.Mqtt.M2Mqtt": "1.2.2",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.8",
           "SomfyProtexialIO.Gateway.Common": "1.0.0",
-          "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant": "1.1.2",
+          "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant": "1.2.0",
           "SomfyProtexialIO.Gateway.SDK": "1.0.0",
           "SomfyProtexialIO.Proxy.Client": "1.0.5",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -1364,7 +1364,7 @@
           "SomfyProtexialIO.Gateway.PlugIns.dll": {}
         }
       },
-      "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.1.2": {
+      "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.2.0": {
         "dependencies": {
           "Initia.HomeAssistant": "1.0.0",
           "Initia.Mqtt": "1.2.1",
@@ -3816,7 +3816,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.1.2": {
+    "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
