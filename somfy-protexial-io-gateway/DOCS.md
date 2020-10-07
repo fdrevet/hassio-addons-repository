@@ -152,6 +152,9 @@ Hassio:
   EntitiesNameSuffix: HASS.io suffix for entity name (optional, default : '')
   ExposeGlobalStatus: Indicates whether the Somfy Protexial IO global status should be exposed with HASS.io entities (optional, default : true)
   ExposeElements:  Indicates whether the Somfy Protexial IO elements should be exposed with HASS.io entities (optional, default : true)
+  EnableMqttAlarmControlPanel: Indicates that MQTT Alarm control panel is enabled,
+  MqttAlarmControlPanelState: MQTT topic to provide MQTT Alarm control panel state,
+  MqttAlarmControlPanelCommand: MQTT topic to manage MQTT Alarm control panel commands
 ```
 
 
@@ -179,6 +182,9 @@ Hassio:
   EntitiesNameSuffix: ''
   ExposeGlobalStatus: 'true'
   ExposeElements: 'true'
+  EnableMqttAlarmControlPanel: true,
+  MqttAlarmControlPanelState: "homeassistant/spiog/state",
+  MqttAlarmControlPanelCommand: "homeassistant/spiog/command"
 ```
 
 
@@ -562,15 +568,45 @@ You can use [Manual Alarm Control Panel](https://www.home-assistant.io/integrati
 
 ### Manual Alarm Control Panel
 
-"Somfy Protexial IO Gateway" can be easily used with [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/) and some automation, as described.
+"Somfy Protexial IO Gateway" can be used with [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/) and some automation, as described in article.
+
+
 
 Simply use "Alarm (All)" switch or binary sensor (you don't need to specify all entities, unless if you don't expose global status)
 
 
 
+Please note this panel is not the most natural, since "Somfy Protexial IO" alarm physically manage triggers by itself : MQTT Alarm Control Panel is recommended.
+
+
+
 ### MQTT Alarm Control Panel
 
-"Somfy Protexial IO Gateway" is not yet compatible with [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt), stay in touch.
+"Somfy Protexial IO Gateway" is compatible with [MQTT Alarm Control Panel since version 0.5.0.
+
+
+
+Just add Hassio configuration entry like :
+
+```yaml
+- platform: mqtt
+  name: Somfy Protexial IO
+  code: '1234'
+  state_topic: "homeassistant/spiog/state"
+  command_topic: "homeassistant/spiog/command"
+```
+
+
+
+And configure your "Somfy Protexial IO Gateway" configuration with :
+
+```yaml
+...
+Hassio:
+  EnableMqttAlarmControlPanel: true,
+  MqttAlarmControlPanelState: "homeassistant/spiog/state",
+  MqttAlarmControlPanelCommand: "homeassistant/spiog/command"
+```
 
 
 

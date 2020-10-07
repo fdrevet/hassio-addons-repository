@@ -1,6 +1,6 @@
 {
   "name": "Somfy Protexial IO - Gateway",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "slug": "spiog",
   "description": "Consume Somfy Protexial IO Proxy's REST API, to update HASS.io through MQTT",
   "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
@@ -31,7 +31,10 @@
       "EntitiesNamePrefix": "Somfy - ",
       "EntitiesNameSuffix": "",
       "ExposeGlobalStatus": "true",
-      "ExposeElements": "true"
+      "ExposeElements": "true",
+      "EnableMqttAlarmControlPanel": true,
+      "MqttAlarmControlPanelState": "homeassistant/spiog/state",
+      "MqttAlarmControlPanelCommand": "homeassistant/spiog/command"
     }
   },
   "schema": {
@@ -53,6 +56,9 @@
       "EntitiesNameSuffix": "str?",
       "ExposeGlobalStatus": "bool?",
       "ExposeElements": "bool?"
+      "EnableMqttAlarmControlPanel": "bool?"
+      "MqttAlarmControlPanelState": "str?",
+      "MqttAlarmControlPanelCommand": "str?"
     }
   }
 }

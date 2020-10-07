@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+- Added support for MQTT Alarm Control Panel (Hassio => Somfy Protexial IO alarm)
+
 ## 0.4.2
 
 - Changes in values of Hass.io entities are now kept via MQTT, this fixes the problem of loss of state when restarting Hass.io
