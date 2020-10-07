@@ -55,8 +55,8 @@
       "EntitiesNamePrefix": "str?",
       "EntitiesNameSuffix": "str?",
       "ExposeGlobalStatus": "bool?",
-      "ExposeElements": "bool?"
-      "EnableMqttAlarmControlPanel": "bool?"
+      "ExposeElements": "bool?",
+      "EnableMqttAlarmControlPanel": "bool?",
       "MqttAlarmControlPanelState": "str?",
       "MqttAlarmControlPanelCommand": "str?"
     }
