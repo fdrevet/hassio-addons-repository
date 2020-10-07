@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2
+
+- Changes in values of Hass.io entities are now kept via MQTT, this fixes the problem of loss of state when restarting Hass.io
+
 ## 0.4.1
 
 - Upgraded documentation
