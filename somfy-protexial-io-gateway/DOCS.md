@@ -170,21 +170,23 @@ And a fictitious example :
 ```yaml
 MqttBroker:
   Hostname: your-broker
+  TcpPort: 1883
   Username: homeassistant
   Password: **********
 Proxy:
   Hostname: your-somfy-protexial-io-proxy
+  TcpPort: 8093
 Hassio:
-  MqttDiscoverPrefix: homeassistant
-  EntitiesMqttPrefix: somfy_
+  MqttDiscoverPrefix: 'homeassistant'
+  EntitiesMqttPrefix: 'somfy_'
   EntitiesMqttSuffix: ''
   EntitiesNamePrefix: 'Somfy - '
   EntitiesNameSuffix: ''
-  ExposeGlobalStatus: 'true'
-  ExposeElements: 'true'
-  EnableMqttAlarmControlPanel: true,
-  MqttAlarmControlPanelState: "homeassistant/spiog/state",
-  MqttAlarmControlPanelCommand: "homeassistant/spiog/command"
+  ExposeGlobalStatus: true
+  ExposeElements: true
+  EnableMqttAlarmControlPanel: true
+  MqttAlarmControlPanelState: homeassistant/spiog/state
+  MqttAlarmControlPanelCommand: homeassistant/spiog/command
 ```
 
 
@@ -592,8 +594,8 @@ Just add Hassio configuration entry like :
 - platform: mqtt
   name: Somfy Protexial IO
   code: '1234'
-  state_topic: "homeassistant/spiog/state"
-  command_topic: "homeassistant/spiog/command"
+  state_topic: homeassistant/spiog/state
+  command_topic: homeassistant/spiog/command
 ```
 
 
@@ -603,9 +605,9 @@ And configure your "Somfy Protexial IO Gateway" configuration with :
 ```yaml
 ...
 Hassio:
-  EnableMqttAlarmControlPanel: true,
-  MqttAlarmControlPanelState: "homeassistant/spiog/state",
-  MqttAlarmControlPanelCommand: "homeassistant/spiog/command"
+  EnableMqttAlarmControlPanel: true
+  MqttAlarmControlPanelState: homeassistant/spiog/state
+  MqttAlarmControlPanelCommand: homeassistant/spiog/command
 ```
 
 
