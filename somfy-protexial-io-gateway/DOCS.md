@@ -4,7 +4,7 @@ Welcome to "Somfy Protexial IO Gateway" add-on !
 
 # Why this add-on ?
 
-I don't own a Tahoma Box and don't need/want one for the moment.
+I don't own a [Tahoma Box](https://www.somfy.fr/produits/1811478/tahoma) and don't need/want one for the moment.
 
 
 
@@ -20,9 +20,11 @@ So, I wrote this add-on in order to let HASS.io and my alarm communicate bidirec
 
 This add-on is UNOFFICIAL.
 
-This add-on doesn't rely on any Somfy integration.
+This add-on does NOT rely on any [Somfy integration](https://www.home-assistant.io/integrations/somfy/).
 
-I don't work for Somfy Group or am affiliated with them in any way.
+I don't work for [Somfy Group](https://www.somfy-group.com) or am affiliated with them in any way.
+
+"Somfy", "Somfy Protexial IO", and the icons of Somfy elements used in the documentation, are the property of [Somfy Group](https://www.somfy-group.com).
 
 
 
@@ -30,7 +32,9 @@ I don't work for Somfy Group or am affiliated with them in any way.
 
 This add-on doesn't collect any data or personal information.
 
-All your data is stored on your HASSio installation, and on the MQTT broker that you have chosen.
+This add-on doesn't store any data, even locally, all data are managed in memory.
+
+Persistent data are stored on chosen MQTT broker (for [MQTT integration](https://www.home-assistant.io/integrations/mqtt))
 
 
 
@@ -85,7 +89,6 @@ I plan to release an “Emulator”, consuming “Gateway” REST API, and fixin
 # Known issues
 
 * When stoppping/restarting "Somfy Protexial IO Gateway" add-on on Rasperry PI, it can be necessary to physically reboot.
-* "Communication" entities are "Disconnected", when HASS.io is restarted
 
 
 
@@ -152,9 +155,25 @@ Hassio:
   EntitiesNameSuffix: HASS.io suffix for entity name (optional, default : '')
   ExposeGlobalStatus: Indicates whether the Somfy Protexial IO global status should be exposed with HASS.io entities (optional, default : true)
   ExposeElements:  Indicates whether the Somfy Protexial IO elements should be exposed with HASS.io entities (optional, default : true)
-  EnableMqttAlarmControlPanel: Indicates that MQTT Alarm control panel is enabled,
-  MqttAlarmControlPanelState: MQTT topic to provide MQTT Alarm control panel state,
-  MqttAlarmControlPanelCommand: MQTT topic to manage MQTT Alarm control panel commands
+  EnableMqttAlarmControlPanel: Indicates that MQTT Alarm control panel is enabled (default 'true')
+  MqttAlarmControlPanelState: MQTT topic providing all zones state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state')
+  MqttAlarmControlPanelStateA: MQTT topic providing zone A state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_a')
+  MqttAlarmControlPanelStateB: MQTT topic providing zone B state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_b')
+  MqttAlarmControlPanelStateC: MQTT topic providing zone C state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_c')
+  MqttAlarmControlPanelCommand: MQTT topic controlling all zones arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command')
+  MqttAlarmControlPanelCommandA: MQTT topic controlling zone A arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_a')
+  MqttAlarmControlPanelCommandB: MQTT topic controlling zone B arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_b')
+  MqttAlarmControlPanelCommandC: MQTT topic controlling zone C arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_c')
+  AllowSwitchDisarm:
+    ZoneAll: Allow Hassio switch entity "Alarm (all)" to disarm alarm (default : true)
+    ZoneA: Allow Hassio switch entity "Alarm (A)" to disarm alarm (default : true)
+    ZoneB: Allow Hassio switch entity "Alarm (B)" to disarm alarm (default : true)
+    ZoneC: Allow Hassio switch entity "Alarm (C)" to disarm alarm (default : true)
+  EnableSwitches:
+    ZoneAll: Enable Hassio switch entity "Alarm (all)", for all zones arming/disarming (default : true)
+    ZoneA: Enable Hassio switch entity "Alarm (A)", for zone A zone arming/disarming (default : true)
+    ZoneB: Enable Hassio switch entity "Alarm (B)", for zone B zone arming/disarming (default : true)
+    ZoneC: Enable Hassio switch entity "Alarm (C)", for zone C zone arming/disarming (default : true)
 ```
 
 
@@ -556,43 +575,54 @@ All Somfy element properties are creating a HASS.io binary sensor entity.s
 
 
 
-# Misc
+# Alarm panel integration
+
+You can use [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/) or [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/) (recommended)
 
 
 
-## Alarm panel integration
-
-You can use [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/).
-
-[MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/) is not available yet.
-
-
-
-### Manual Alarm Control Panel
+## Manual Alarm Control Panel
 
 "Somfy Protexial IO Gateway" can be used with [Manual Alarm Control Panel](https://www.home-assistant.io/integrations/manual/) and some automation, as described in article.
 
 
 
-Simply use "Alarm (All)" switch or binary sensor (you don't need to specify all entities, unless if you don't expose global status)
+Simply use "Alarm (All)" switch or binary sensor (you don't need to specify all entities, unless you don't expose global status)
 
 
 
-Please note this panel is not the most natural, since "Somfy Protexial IO" alarm physically manage triggers by itself : MQTT Alarm Control Panel is recommended.
+Please note this panel is not the most natural, since "Somfy Protexial IO" alarm physically manage triggers by itself : [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/) is recommended.
 
 
 
-### MQTT Alarm Control Panel
+## MQTT Alarm Control Panel
 
-"Somfy Protexial IO Gateway" is compatible with [MQTT Alarm Control Panel since version 0.5.0.
+"Somfy Protexial IO Gateway" is compatible with [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) since version 0.5.0.
 
 
 
-Just add Hassio configuration entry like :
+You can manage zones since version 0.6 :
+
+* all zones (ABC) armed
+* zone A armed
+
+* zone B armed
+
+* zone C armed
+
+
+
+Also, and still with version 0.6, physical alarm arming/disarming changes are dynamically reflected to  [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) !
+
+
+
+### All zones (ABC)
+
+Add Hassio configuration entry like :
 
 ```yaml
 - platform: mqtt
-  name: Somfy Protexial IO
+  name: Somfy Protexial IO (all)
   code: '1234'
   state_topic: homeassistant/spiog/state
   command_topic: homeassistant/spiog/command
@@ -608,6 +638,84 @@ Hassio:
   EnableMqttAlarmControlPanel: true
   MqttAlarmControlPanelState: homeassistant/spiog/state
   MqttAlarmControlPanelCommand: homeassistant/spiog/command
+```
+
+
+
+### Zone A
+
+Add Hassio configuration entry like :
+
+```yaml
+- platform: mqtt
+  name: Somfy Protexial IO (zone a)
+  code: '1234'
+  state_topic: homeassistant/spiog/state_a
+  command_topic: homeassistant/spiog/command_a
+```
+
+
+
+And configure your "Somfy Protexial IO Gateway" configuration with :
+
+```yaml
+...
+Hassio:
+  EnableMqttAlarmControlPanel: true
+  MqttAlarmControlPanelState: homeassistant/spiog/state_a
+  MqttAlarmControlPanelCommand: homeassistant/spiog/command_a
+```
+
+
+
+### Zone B
+
+Add Hassio configuration entry like :
+
+```yaml
+- platform: mqtt
+  name: Somfy Protexial IO (zone b)
+  code: '1234'
+  state_topic: homeassistant/spiog/state_b
+  command_topic: homeassistant/spiog/command_b
+```
+
+
+
+And configure your "Somfy Protexial IO Gateway" configuration with :
+
+```yaml
+...
+Hassio:
+  EnableMqttAlarmControlPanel: true
+  MqttAlarmControlPanelState: homeassistant/spiog/state_b
+  MqttAlarmControlPanelCommand: homeassistant/spiog/command_b
+```
+
+
+
+### Zone C
+
+Add Hassio configuration entry like :
+
+```yaml
+- platform: mqtt
+  name: Somfy Protexial IO (zone c)
+  code: '1234'
+  state_topic: homeassistant/spiog/state_c
+  command_topic: homeassistant/spiog/command_c
+```
+
+
+
+And configure your "Somfy Protexial IO Gateway" configuration with :
+
+```yaml
+...
+Hassio:
+  EnableMqttAlarmControlPanel: true
+  MqttAlarmControlPanelState: homeassistant/spiog/state_c
+  MqttAlarmControlPanelCommand: homeassistant/spiog/command_c
 ```
 
 

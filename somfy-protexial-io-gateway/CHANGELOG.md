@@ -1,5 +1,40 @@
 # Changelog
 
+## 0.6.0
+
+Zones can now be managed in [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) :
+
+* all zones (ABC) armed
+* zone A armed
+
+* zone B armed
+
+* zone C armed
+
+
+
+Also, physical alarm arming/disarming changes are dynamically reflected to  [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt).
+
+
+
+Added possibility to enable/disable Home Assistant switches for zones All, A, B, C.
+
+
+
+Added possibility to enable/disable alarm disarming from Home Assistant switches for zones All, A, B, C.
+
+
+
+Somfy global status are now set offline, when plug-in is stopped.
+
+
+
+Somfy elements are now set offline, when plug-in is stopped.
+
+
+
+Fixed configuration sample.
+
 ## 0.5.0
 
 - Added support for MQTT Alarm Control Panel (Hassio => Somfy Protexial IO alarm)

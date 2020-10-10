@@ -1,6 +1,6 @@
 {
   "name": "Somfy Protexial IO - Gateway",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "slug": "spiog",
   "description": "Consume Somfy Protexial IO Proxy's REST API, to update HASS.io through MQTT",
   "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
@@ -34,15 +34,33 @@
       "ExposeElements": "true",
       "EnableMqttAlarmControlPanel": true,
       "MqttAlarmControlPanelState": "homeassistant/spiog/state",
+      "MqttAlarmControlPanelStateA": "homeassistant/spiog/state_a",
+      "MqttAlarmControlPanelStateB": "homeassistant/spiog/state_b",
+      "MqttAlarmControlPanelStateC": "homeassistant/spiog/state_c",
       "MqttAlarmControlPanelCommand": "homeassistant/spiog/command"
+      "MqttAlarmControlPanelCommandA": "homeassistant/spiog/command_a"
+      "MqttAlarmControlPanelCommandB": "homeassistant/spiog/command_b"
+      "MqttAlarmControlPanelCommandC": "homeassistant/spiog/command_c"
+      "EnableSwitches": {
+        "ZoneAll": true,
+        "ZoneA": true,
+        "ZoneB": true,
+        "ZoneC": true
+      },
+      "AllowAlarmControlPanelDisarm": {
+        "ZoneAll": true,
+        "ZoneA": true,
+        "ZoneB": true,
+        "ZoneC": true
+      }
     }
   },
   "schema": {
     "MqttBroker": {
       "Hostname": "str",
       "TcpPort": "int",
-	  "Username": "str?",
-	  "Password": "str?"
+      "Username": "str?",
+      "Password": "str?"
     },
     "Proxy": {
       "Hostname": "str",
@@ -58,7 +76,25 @@
       "ExposeElements": "bool?",
       "EnableMqttAlarmControlPanel": "bool?",
       "MqttAlarmControlPanelState": "str?",
+      "MqttAlarmControlPanelStateA": "str?",
+      "MqttAlarmControlPanelStateB": "str?",
+      "MqttAlarmControlPanelStateC": "str?",
       "MqttAlarmControlPanelCommand": "str?"
+      "MqttAlarmControlPanelCommandA": "str?"
+      "MqttAlarmControlPanelCommandB": "str?"
+      "MqttAlarmControlPanelCommandC": "str?"
+      "EnableSwitches": {
+        "ZoneAll": bool?,
+        "ZoneA": bool?,
+        "ZoneB": bool?,
+        "ZoneC": bool?
+      },
+      "AllowAlarmControlPanelDisarm": {
+        "ZoneAll": bool?,
+        "ZoneA": bool?,
+        "ZoneB": bool?,
+        "ZoneC": bool?
+      }
     }
   }
 }
