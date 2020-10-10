@@ -156,14 +156,18 @@ Hassio:
   ExposeGlobalStatus: Indicates whether the Somfy Protexial IO global status should be exposed with HASS.io entities (optional, default : true)
   ExposeElements:  Indicates whether the Somfy Protexial IO elements should be exposed with HASS.io entities (optional, default : true)
   EnableMqttAlarmControlPanel: Indicates that MQTT Alarm control panel is enabled (default 'true')
-  MqttAlarmControlPanelState: MQTT topic providing all zones state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state')
-  MqttAlarmControlPanelStateA: MQTT topic providing zone A state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_a')
-  MqttAlarmControlPanelStateB: MQTT topic providing zone B state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_b')
-  MqttAlarmControlPanelStateC: MQTT topic providing zone C state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_c')
-  MqttAlarmControlPanelCommand: MQTT topic controlling all zones arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command')
-  MqttAlarmControlPanelCommandA: MQTT topic controlling zone A arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_a')
-  MqttAlarmControlPanelCommandB: MQTT topic controlling zone B arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_b')
-  MqttAlarmControlPanelCommandC: MQTT topic controlling zone C arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_c')
+  MqttAlarmControlPanelState: MQTT topic providing all zones state, for MQTT Alarm control panel (backward compatibility, default : 'homeassistant/spiog/state')
+  MqttAlarmControlPanelStates:
+    ZoneAll: MQTT topic providing all zones state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state')
+    ZoneA: MQTT topic providing zone A state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_a')
+    ZoneB: MQTT topic providing zone B state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_b')
+    ZoneC: MQTT topic providing zone C state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_c')
+  MqttAlarmControlPanelCommand: MQTT topic controlling all zones arming/disarming, for MQTT Alarm control panel (backward compatibility, default : 'homeassistant/spiog/command')
+  MqttAlarmControlPanelCommands:
+    ZoneAll: MQTT topic controlling all zones arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command')
+    ZoneA: MQTT topic controlling zone A arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_a')
+    ZoneB: MQTT topic controlling zone B arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_b')
+    ZoneC: MQTT topic controlling zone C arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_c')
   AllowSwitchDisarm:
     ZoneAll: Allow Hassio switch entity "Alarm (all)" to disarm alarm (default : true)
     ZoneA: Allow Hassio switch entity "Alarm (A)" to disarm alarm (default : true)
@@ -204,8 +208,10 @@ Hassio:
   ExposeGlobalStatus: true
   ExposeElements: true
   EnableMqttAlarmControlPanel: true
-  MqttAlarmControlPanelState: homeassistant/spiog/state
-  MqttAlarmControlPanelCommand: homeassistant/spiog/command
+  MqttAlarmControlPanelStates:
+    ZoneAll: homeassistant/spiog/state
+  MqttAlarmControlPanelCommands:
+    ZoneAll: homeassistant/spiog/command
 ```
 
 
@@ -662,8 +668,10 @@ And configure your "Somfy Protexial IO Gateway" configuration with :
 ...
 Hassio:
   EnableMqttAlarmControlPanel: true
-  MqttAlarmControlPanelState: homeassistant/spiog/state_a
-  MqttAlarmControlPanelCommand: homeassistant/spiog/command_a
+  MqttAlarmControlPanelStates:
+    ZoneA: homeassistant/spiog/state_a
+  MqttAlarmControlPanelCommands:
+    ZoneA: homeassistant/spiog/command_a
 ```
 
 
@@ -676,8 +684,10 @@ Add Hassio configuration entry like :
 - platform: mqtt
   name: Somfy Protexial IO (zone b)
   code: '1234'
-  state_topic: homeassistant/spiog/state_b
-  command_topic: homeassistant/spiog/command_b
+  MqttAlarmControlPanelStates:
+    ZoneB: homeassistant/spiog/state_b
+  MqttAlarmControlPanelCommands:
+    ZoneB: homeassistant/spiog/command_b
 ```
 
 
@@ -688,8 +698,10 @@ And configure your "Somfy Protexial IO Gateway" configuration with :
 ...
 Hassio:
   EnableMqttAlarmControlPanel: true
-  MqttAlarmControlPanelState: homeassistant/spiog/state_b
-  MqttAlarmControlPanelCommand: homeassistant/spiog/command_b
+  MqttAlarmControlPanelStates:
+    ZoneB: homeassistant/spiog/state_b
+  MqttAlarmControlPanelCommands:
+    ZoneB: homeassistant/spiog/command_b
 ```
 
 
@@ -714,8 +726,10 @@ And configure your "Somfy Protexial IO Gateway" configuration with :
 ...
 Hassio:
   EnableMqttAlarmControlPanel: true
-  MqttAlarmControlPanelState: homeassistant/spiog/state_c
-  MqttAlarmControlPanelCommand: homeassistant/spiog/command_c
+  MqttAlarmControlPanelStates:
+    ZoneC: homeassistant/spiog/state_c
+  MqttAlarmControlPanelCommands:
+    ZoneC: homeassistant/spiog/command_c
 ```
 
 
