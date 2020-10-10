@@ -178,17 +178,121 @@ Hassio:
     ZoneA: Enable Hassio switch entity "Alarm (A)", for zone A zone arming/disarming (default : true)
     ZoneB: Enable Hassio switch entity "Alarm (B)", for zone B zone arming/disarming (default : true)
     ZoneC: Enable Hassio switch entity "Alarm (C)", for zone C zone arming/disarming (default : true)
+  Icons:
+    code1: icon
+    code2: icon
+    code3: icon
 ```
 
 
 
-Keep in mind configuration names, they will be used as variables, with {}, in the next parts of documentation.
+## Custom entities Icons
+
+Since 0.6, you can customize most of generated Hassio entities icons, by specifying rules.
 
 
 
-## Fictitious example
+These rules are specified in "Hassio" > "Icons" configuration node.
 
-And a fictitious example :
+
+
+Each line  represent a Somfy element (by code) or Somfy property :
+
+```yaml
+...
+Hassio:
+  ...
+  Icons:
+    "alarm-triggered": "door"
+    "396245": "door"
+    "396294": "window"
+    "301181": "garage_door"
+```
+
+
+
+### Open/close icons
+
+Open/close icons can be customize (default : ![Closed][image-closed] ![Opened][image-opened])  by specifying Somfy element code, and the wanted device class name (among those defined in https://www.home-assistant.io/integrations/binary_sensor)
+
+This is possible for these Somfy elements :
+
+* Door sensor
+
+* Door window sensor
+
+* Motion detector
+
+* Motion detector with photo
+
+
+
+### Motion icon
+
+Motion icon can be customize (default : ![Motion][image-motion])  by specifying Somfy element code, and the wanted device class name (among those defined in https://www.home-assistant.io/integrations/binary_sensor)
+
+
+
+This is possible for these Somfy elements :
+
+* Motion detector
+
+* Motion detector with photo
+
+
+
+### Others binary sensors
+
+Binary sensors icons generated for Somfy properties can be customized.
+
+
+
+These properties are available for global status and some Somfy elements.
+
+
+
+This is done :
+
+* by specifying code in table
+* and wanted device class name (among those defined in https://www.home-assistant.io/integrations/binary_sensor)
+
+| Name            | Code              | Default icon                          |
+| --------------- | ----------------- | ------------------------------------- |
+| Alarm triggered | alarm-triggered   | ![Shield][image-shield]               |
+| Battery         | battery           | ![Battery][image-battery]             |
+| Communication   | communication     | ![Communication][image-communication] |
+| Doors/Windows   | doors-windows     |                                       |
+| GSM OK          | gsm-communication |                                       |
+
+
+
+### Others sensors
+
+Sensors icons generated for Somfy properties can be customized.
+
+
+
+These properties are available for global status.
+
+
+
+This is done :
+
+* by specifying code in table
+* and wanted device class name (among those defined https://www.home-assistant.io/integrations/sensor)
+
+| Name             | Code           | Default icon |
+| ---------------- | -------------- | ------------ |
+| Gsm Signal       | gsm-signal     |              |
+| Gsm Signal (DBM) | gsm-signal-dbm |              |
+
+
+
+## Samples
+
+
+
+### Fictitious
 
 ```yaml
 MqttBroker:
@@ -216,9 +320,7 @@ Hassio:
 
 
 
-## Fictitious example (mandatory settings)
-
-Minimal fictitious example without optional settings :
+### Fictitious (mandatory settings)
 
 ```yaml
 MqttBroker:
@@ -231,9 +333,7 @@ Proxy:
 
 
 
-## Fictitious example (mandatory settings, no credentials)
-
-Minimal fictitious example without optional settings and credentials :
+### Fictitious (mandatory settings, no credentials)
 
 ```
 MqttBroker:
