@@ -88,7 +88,9 @@
       "ExposeElements": "bool?",
       "EnableMqttAlarmControlPanel": "bool?",
       "MqttAlarmControlPanelState": "str?",
-      "MqttAlarmControlPanelCommand": "str?"
+      "MqttAlarmControlPanelCommand": "str?",
+	  "EnableArmedBinarySensors": "bool?",
+	  "EnableDisarmedBinarySensors": "bool?"
     },
     "HassioMqttAlarmControlPanelCommands": {
       "ZoneAll": "str?",
