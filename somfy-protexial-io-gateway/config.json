@@ -34,7 +34,9 @@
       "ExposeElements": true,
       "EnableMqttAlarmControlPanel": true,
       "MqttAlarmControlPanelState": "homeassistant/spiog/state",
-      "MqttAlarmControlPanelCommand": "homeassistant/spiog/command"
+      "MqttAlarmControlPanelCommand": "homeassistant/spiog/command",
+	  "EnableArmedBinarySensors": true,
+	  "EnableDisarmedBinarySensors": false
     },
     "HassioMqttAlarmControlPanelCommands": {
       "ZoneAll": "homeassistant/spiog/command",

@@ -13,26 +13,39 @@ Zones can now be managed in [MQTT Alarm Control Panel](https://www.home-assistan
 
 
 
-Also, physical alarm arming/disarming changes are dynamically reflected to  [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt).
+Physical alarm arming/disarming, are dynamically reflected to  [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (zones : all, a, b, c)
 
 
 
-Added possibility to enable/disable Home Assistant switches for zones All, A, B, C.
+Home Assistant switches for zones All, A, B or C, can now be enabled/disabled.
 
 
 
-Added possibility to enable/disable alarm disarming from Home Assistant switches for zones All, A, B, C.
+Existing Home Assistant binary sensors for zones All, A, B or C alarm armed status, can now be enabled/disabled (default : enabled)
 
 
 
-Somfy global status are now set offline, when plug-in is stopped.
+Added Home Assistant binary sensors for zones All, A, B or C.
+
+These new binary sensors can now be enabled/disabled (default : disabled)
 
 
 
-Somfy elements are now set offline, when plug-in is stopped.
+Alarm disarming from Home Assistant switches for zones All, A, B or C, can now be enabled/disabled.
 
 
-Added possibility to customize Hassio entities icons.
+
+Created Home Assistant entities, are now set to :
+
+* online, when add-on is started
+
+* offline, when add-on is stopped
+
+
+
+
+Created Hassio entities icons icons can now be customized.
+
 
 
 Fixed configuration sample.

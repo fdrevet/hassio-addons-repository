@@ -158,6 +158,8 @@ Hassio:
   EnableMqttAlarmControlPanel: true
   MqttAlarmControlPanelState: homeassistant/spiog/state
   MqttAlarmControlPanelCommand: homeassistant/spiog/command
+  EnableArmedBinarySensors: true
+  EnableDisarmedBinarySensors: false
 HassioMqttAlarmControlPanelCommands:
   ZoneAll: homeassistant/spiog/command
   ZoneA: homeassistant/spiog/command_a
@@ -284,8 +286,12 @@ This is done :
 | --------------- | ----------------- | ------------------------------------- |
 | Alarm (all) | alarm_all   | ![Shield][image-opened-lock] (lock) |
 | Alarm (a) | alarm_a   | ![Shield][image-opened-lock] (lock)    |
-| Alarm (b) | alarm_c   | ![Shield][image-opened-lock] (lock)    |
-| Alarm (c) | alarm_c   | ![Shield][image-shield] (shield)               |
+| Alarm (b) | alarm_b  | ![Shield][image-opened-lock] (lock)    |
+| Alarm (c) | alarm_c   | ![Shield][image-opened-lock] (lock) |
+| Alarm disarmed (all) | alarm_all_disarmed   | ![Shield][image-opened-lock] (lock) |
+| Alarm disarmed (a) | alarm_a_disarmed   | ![Shield][image-opened-lock] (lock)    |
+| Alarm disarmed (b) | alarm_b_disarmed  | ![Shield][image-opened-lock] (lock)    |
+| Alarm  disarmed(c) | alarm_c_disarmed   | ![Shield][image-opened-lock] (lock) |
 | GSM OK          | gsm-communication | ![Communication][image-communication] (connectivity)   |
 
 
