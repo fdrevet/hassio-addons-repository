@@ -140,59 +140,60 @@ Here are the available options :
 
 ```yaml
 MqttBroker:
-  Hostname: MQTT broker hostname or IP (should be your HASS.io hostname)
-  TcpPort: MQTT broker TCP port (optional, default : 1883)
-  Username: MQTT broker username used to connect (optional)
-  Password: MQTT broker password used to connect (optional)
+  Hostname: MQTT broker hostname or ip
+  TcpPort: 1883
+  Username: MQTT broker optional username
+  Password: MQTT broker optional password
 Proxy:
-  Hostname: Somfy Protexial IO Proxy hostname or IP (should be your HASS.io hostname)
-  TcpPort: Somfy Protexial IO Proxy TCP port (optional, default : 8093)
+  Hostname: Somfy Protexial IO Proxy hostname or ip
+  TcpPort: 8093
 Hassio:
-  MqttDiscoverPrefix: MQTT discover prefix used by HASS.io to discover MQTT entities (optional, default : 'homeassistant')
-  EntitiesMqttPrefix: MQTT prefix for entity name (optional, default : 'somfy_')
-  EntitiesMqttSuffix: MQTT suffix for entity name (optional, default : '')
-  EntitiesNamePrefix: HASS.io previx for entity name (optional, default : 'Somfy - ')
-  EntitiesNameSuffix: HASS.io suffix for entity name (optional, default : '')
-  ExposeGlobalStatus: Indicates whether the Somfy Protexial IO global status should be exposed with HASS.io entities (optional, default : true)
-  ExposeElements:  Indicates whether the Somfy Protexial IO elements should be exposed with HASS.io entities (optional, default : true)
-  EnableMqttAlarmControlPanel: Indicates that MQTT Alarm control panel is enabled (default 'true')
-  MqttAlarmControlPanelState: MQTT topic providing all zones state, for MQTT Alarm control panel (backward compatibility, default : 'homeassistant/spiog/state')
-  MqttAlarmControlPanelStates:
-    ZoneAll: MQTT topic providing all zones state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state')
-    ZoneA: MQTT topic providing zone A state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_a')
-    ZoneB: MQTT topic providing zone B state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_b')
-    ZoneC: MQTT topic providing zone C state, for MQTT Alarm control panel (default : 'homeassistant/spiog/state_c')
-  MqttAlarmControlPanelCommand: MQTT topic controlling all zones arming/disarming, for MQTT Alarm control panel (backward compatibility, default : 'homeassistant/spiog/command')
-  MqttAlarmControlPanelCommands:
-    ZoneAll: MQTT topic controlling all zones arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command')
-    ZoneA: MQTT topic controlling zone A arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_a')
-    ZoneB: MQTT topic controlling zone B arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_b')
-    ZoneC: MQTT topic controlling zone C arming/disarming, for MQTT Alarm control panel (default : 'homeassistant/spiog/command_c')
-  AllowSwitchDisarm:
-    ZoneAll: Allow Hassio switch entity "Alarm (all)" to disarm alarm (default : true)
-    ZoneA: Allow Hassio switch entity "Alarm (A)" to disarm alarm (default : true)
-    ZoneB: Allow Hassio switch entity "Alarm (B)" to disarm alarm (default : true)
-    ZoneC: Allow Hassio switch entity "Alarm (C)" to disarm alarm (default : true)
-  EnableSwitches:
-    ZoneAll: Enable Hassio switch entity "Alarm (all)", for all zones arming/disarming (default : true)
-    ZoneA: Enable Hassio switch entity "Alarm (A)", for zone A zone arming/disarming (default : true)
-    ZoneB: Enable Hassio switch entity "Alarm (B)", for zone B zone arming/disarming (default : true)
-    ZoneC: Enable Hassio switch entity "Alarm (C)", for zone C zone arming/disarming (default : true)
-  Icons:
-    code1: icon
-    code2: icon
-    code3: icon
+  MqttDiscoverPrefix: homeassistant
+  EntitiesMqttPrefix: somfy_
+  EntitiesMqttSuffix: ''
+  EntitiesNamePrefix: 'Somfy - '
+  EntitiesNameSuffix: ''
+  ExposeGlobalStatus: true
+  ExposeElements: true
+  EnableMqttAlarmControlPanel: true
+  MqttAlarmControlPanelState: homeassistant/spiog/state
+  MqttAlarmControlPanelCommand: homeassistant/spiog/command
+HassioMqttAlarmControlPanelCommands:
+  ZoneAll: homeassistant/spiog/command
+  ZoneA: homeassistant/spiog/command_a
+  ZoneB: homeassistant/spiog/command_b
+  ZoneC: homeassistant/spiog/command_c
+HassioMqttAlarmControlPanelStates:
+  ZoneAll: homeassistant/spiog/state
+  ZoneA: homeassistant/spiog/state_a
+  ZoneB: homeassistant/spiog/state_b
+  ZoneC: homeassistant/spiog/state_c
+HassioMqttAlarmControlPanelAllowDisarm:
+  ZoneAll: true
+  ZoneA: true
+  ZoneB: true
+  ZoneC: true
+HassioEnableSwitches:
+  ZoneAll: true
+  ZoneA: true
+  ZoneB: true
+  ZoneC: true
+HassioEntitiesIcons:
+  - Key: '928367'
+    Value: window
+  - Key: alarm-triggered
+    Value: problem
 ```
 
 
 
-## Custom entities Icons
+## Customize entities Icons
 
 Since 0.6, you can customize most of generated Hassio entities icons, by specifying rules.
 
 
 
-These rules are specified in "Hassio" > "Icons" configuration node.
+These rules are specified in ```HassioEntitiesIcons``` configuration node.
 
 
 
@@ -202,7 +203,7 @@ Each line  represent a Somfy element (by code) or Somfy property :
 ...
 Hassio:
   ...
-  Icons:
+  HassioEntitiesIcons:
     "alarm-triggered": "door"
     "396245": "door"
     "396294": "window"
@@ -258,11 +259,15 @@ This is done :
 
 | Name            | Code              | Default icon                          |
 | --------------- | ----------------- | ------------------------------------- |
-| Alarm triggered | alarm-triggered   | ![Shield][image-shield]               |
-| Battery         | battery           | ![Battery][image-battery]             |
-| Communication   | communication     | ![Communication][image-communication] |
-| Doors/Windows   | doors-windows     |                                       |
-| GSM OK          | gsm-communication |                                       |
+| Alarm (all) | alarm_all   | ![Shield][image-opened-lock] (lock) |
+| Alarm (a) | alarm_a   | ![Shield][image-opened-lock] (lock)    |
+| Alarm (b) | alarm_c   | ![Shield][image-opened-lock] (lock)    |
+| Alarm (c) | alarm_c   | ![Shield][image-shield] (shield)               |
+| Battery         | battery           | ![Battery][image-battery] (battery)   |
+| Box          | box               | ![Communication][image-communication] (connectivity) |
+| Communication   | communication     | ![Communication][image-communication] (connectivity) |
+| Doors/Windows   | doors-windows     | ![Closed][image-closed] ![Opened][image-opened] (opening) |
+| GSM OK          | gsm-communication | ![Communication][image-communication] (connectivity)                                      |
 
 
 
@@ -281,66 +286,10 @@ This is done :
 * by specifying code in table
 * and wanted device class name (among those defined https://www.home-assistant.io/integrations/sensor)
 
-| Name             | Code           | Default icon |
-| ---------------- | -------------- | ------------ |
-| Gsm Signal       | gsm-signal     |              |
-| Gsm Signal (DBM) | gsm-signal-dbm |              |
-
-
-
-## Samples
-
-
-
-### Fictitious
-
-```yaml
-MqttBroker:
-  Hostname: your-broker
-  TcpPort: 1883
-  Username: homeassistant
-  Password: **********
-Proxy:
-  Hostname: your-somfy-protexial-io-proxy
-  TcpPort: 8093
-Hassio:
-  MqttDiscoverPrefix: 'homeassistant'
-  EntitiesMqttPrefix: 'somfy_'
-  EntitiesMqttSuffix: ''
-  EntitiesNamePrefix: 'Somfy - '
-  EntitiesNameSuffix: ''
-  ExposeGlobalStatus: true
-  ExposeElements: true
-  EnableMqttAlarmControlPanel: true
-  MqttAlarmControlPanelStates:
-    ZoneAll: homeassistant/spiog/state
-  MqttAlarmControlPanelCommands:
-    ZoneAll: homeassistant/spiog/command
-```
-
-
-
-### Fictitious (mandatory settings)
-
-```yaml
-MqttBroker:
-  Hostname: yourbroker
-  Username: homeassistant
-  Password: **********
-Proxy:
-  Hostname: your-somfy-protexial-io-proxy
-```
-
-
-
-### Fictitious (mandatory settings, no credentials)
-
-```
-MqttBroker:
-  Hostname: yourbroker
-Proxy:
-  Hostname: your-somfy-protexial-io-proxy
-```
+| Name             | Code           | Default icon            |
+| ---------------- | -------------- | ----------------------- |
+| Gsm Signal       | gsm-signal     | ![Signal][image-signal] (signal_strength) |
+| Gsm Signal (DBM) | gsm-signal-dbm | ![Signal][image-signal] (signal_strength) |
 
 
 

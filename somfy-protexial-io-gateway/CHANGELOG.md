@@ -32,6 +32,8 @@ Somfy global status are now set offline, when plug-in is stopped.
 Somfy elements are now set offline, when plug-in is stopped.
 
 
+Added possibility to customize Hassio entities icons.
+
 
 Fixed configuration sample.
 
