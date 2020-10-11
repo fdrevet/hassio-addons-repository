@@ -337,14 +337,14 @@
           "lib/netstandard1.5/Castle.Core.dll": {}
         }
       },
-      "Initia.HomeAssistant/1.0.0": {
+      "Initia.HomeAssistant/1.1.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netcoreapp3.0/Initia.HomeAssistant.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
           }
         },
         "compile": {
@@ -1366,7 +1366,7 @@
       },
       "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant/1.2.0": {
         "dependencies": {
-          "Initia.HomeAssistant": "1.0.0",
+          "Initia.HomeAssistant": "1.1.0",
           "Initia.Mqtt": "1.2.1",
           "Newtonsoft.Json": "12.0.3",
           "Quartz": "3.2.0",
@@ -3064,12 +3064,12 @@
       "path": "castle.core/4.4.1",
       "hashPath": "castle.core.4.4.1.nupkg.sha512"
     },
-    "Initia.HomeAssistant/1.0.0": {
+    "Initia.HomeAssistant/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Jm5y4uM0clEzt3s6FQd9vi5wQCns9Pxe0MobaMSc+zP03/RxVb+6/TzjrMKz5BvRGubsAI0eBnvuMLFQeLKlmA==",
-      "path": "initia.homeassistant/1.0.0",
-      "hashPath": "initia.homeassistant.1.0.0.nupkg.sha512"
+      "sha512": "sha512-9p4wVxL6T0LmKXqWQfcwmVrdtJ/zYcsULDKjgWPpp+bT3hE4XT6XsQuPbf40ufjWXYrNRRodZopv1h+Q+DJLtw==",
+      "path": "initia.homeassistant/1.1.0",
+      "hashPath": "initia.homeassistant.1.1.0.nupkg.sha512"
     },
     "Initia.Mqtt/1.2.1": {
       "type": "package",
