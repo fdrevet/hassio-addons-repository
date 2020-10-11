@@ -216,15 +216,14 @@ Hassio:
 
 Open/close icons can be customize (default : ![Closed][image-closed] ![Opened][image-opened])  by specifying Somfy element code, and the wanted device class name (among those defined in https://www.home-assistant.io/integrations/binary_sensor)
 
+
+
 This is possible for these Somfy elements :
 
-* Door sensor
+* Door sensor ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_do.gif)
 
-* Door window sensor
+* Door window sensor ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_dovitre.gif)
 
-* Motion detector
-
-* Motion detector with photo
 
 
 
@@ -236,15 +235,39 @@ Motion icon can be customize (default : ![Motion][image-motion])  by specifying 
 
 This is possible for these Somfy elements :
 
-* Motion detector
+* Motion detector![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/icon_camera_dm_on.gif)
 
-* Motion detector with photo
+* Motion detector with photo![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/icon_camera_dm_on.gif)
 
 
 
 ### Others binary sensors
 
-Binary sensors icons generated for Somfy properties can be customized.
+Hassio entities icons generated for Somfy binary sensors, can be customized.
+
+
+
+These properties are available for global status and some Somfy elements.
+
+
+
+This is done :
+
+* by specifying code in table
+* and wanted device class name (among those defined in https://www.home-assistant.io/integrations/binary_sensor)
+
+| Name            | Code              | Default icon                          |
+| --------------- | ----------------- | ------------------------------------- |
+| Battery         | battery           | ![Battery][image-battery] (battery)   |
+| Box          | box               | ![Communication][image-communication] (connectivity) |
+| Communication   | communication     | ![Communication][image-communication] (connectivity) |
+| Doors/Windows   | doors-windows     | ![Closed][image-closed] ![Opened][image-opened] (opening) |
+
+
+
+### Global status binary sensors
+
+Hassio entities icons generated for Somfy global status binary sensors, can be customized.
 
 
 
@@ -263,17 +286,13 @@ This is done :
 | Alarm (a) | alarm_a   | ![Shield][image-opened-lock] (lock)    |
 | Alarm (b) | alarm_c   | ![Shield][image-opened-lock] (lock)    |
 | Alarm (c) | alarm_c   | ![Shield][image-shield] (shield)               |
-| Battery         | battery           | ![Battery][image-battery] (battery)   |
-| Box          | box               | ![Communication][image-communication] (connectivity) |
-| Communication   | communication     | ![Communication][image-communication] (connectivity) |
-| Doors/Windows   | doors-windows     | ![Closed][image-closed] ![Opened][image-opened] (opening) |
-| GSM OK          | gsm-communication | ![Communication][image-communication] (connectivity)                                      |
+| GSM OK          | gsm-communication | ![Communication][image-communication] (connectivity)   |
 
 
 
-### Others sensors
+### Global status sensors
 
-Sensors icons generated for Somfy properties can be customized.
+Hassio entities icons generated for Somfy global status sensors, can be customized.
 
 
 
