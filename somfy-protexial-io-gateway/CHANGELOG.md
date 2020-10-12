@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1
+
+Fixed unretained offline/online messages, causing elements to be marked as "unavailable" when restarting Home Assistant.
+
 ## 0.6.0
 
 Zones can now be managed in [MQTT Alarm Control Panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) :
