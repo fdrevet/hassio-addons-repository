@@ -8,9 +8,9 @@ Somfy elements are now set online/offline, depending of their running property i
 
 Added "Hassio > RegisterBatteryBinarySensors" option (default false) :
 
-* true : existing "battery" binary sensors are kept in the interface
+* true : existing "battery" binary sensors are kept in the interface (in addition of "battery level" sensors)
 
-* false : existing "battery" binary sensors are removed
+* false : existing "battery" binary sensors are removed (only "battery level" sensors are available)
 
 
 
