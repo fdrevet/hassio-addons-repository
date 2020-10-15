@@ -1,6 +1,6 @@
 {
   "name": "Somfy Protexial IO - Gateway",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "slug": "spiog",
   "description": "Consume Somfy Protexial IO Proxy's REST API, to update HASS.io through MQTT",
   "arch": [ "armhf", "armv7", "aarch64", "amd64", "i386" ],
@@ -37,7 +37,8 @@
       "MqttAlarmControlPanelCommand": "homeassistant/spiog/command",
 	  "EnableArmedBinarySensors": true,
 	  "EnableDisarmedBinarySensors": false,
-	  "EnableHealthcheckSensors": false
+	  "EnableHealthcheckSensors": false,
+	  "RegisterBatteryBinarySensors": false
     },
     "HassioMqttAlarmControlPanelCommands": {
       "ZoneAll": "homeassistant/spiog/command",
@@ -92,7 +93,8 @@
       "MqttAlarmControlPanelCommand": "str?",
 	  "EnableArmedBinarySensors": "bool?",
 	  "EnableDisarmedBinarySensors": "bool?",
-	  "EnableHealthcheckSensors": "bool?"
+	  "EnableHealthcheckSensors": "bool?",
+	  "RegisterBatteryBinarySensors": "bool?"
     },
     "HassioMqttAlarmControlPanelCommands": {
       "ZoneAll": "str?",

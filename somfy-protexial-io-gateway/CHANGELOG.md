@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.8.0
+
+Somfy elements are now set online/offline, depending of their running property in web user interface (ie. running/paused)
+
+
+
+Added "Hassio > RegisterBatteryBinarySensors" option (default false) :
+
+* true : existing "battery" binary sensors are kept in the interface
+
+* false : existing "battery" binary sensors are removed
+
+
+
+Fixed Somfy elements alarm triggered binary sensor, who was inverted.
+
 ## 0.7.0
 
 "Somfy Protexial IO Gateway" is now more stable and resilient, regarding the "Somfy Protexial IO Proxy" availability/unavailability :

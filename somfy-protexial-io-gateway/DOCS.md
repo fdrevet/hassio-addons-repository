@@ -161,6 +161,7 @@ Hassio:
   EnableArmedBinarySensors: true
   EnableDisarmedBinarySensors: false
   EnableHealthcheckSensors: false
+  RegisterBatteryBinarySensors : false
 HassioMqttAlarmControlPanelCommands:
   ZoneAll: homeassistant/spiog/command
   ZoneA: homeassistant/spiog/command_a
@@ -412,10 +413,10 @@ Somfy - Gsm Signal (DBM)
 | ![Shield][image-shield]                         | Alarm triggered | true = at least one element triggered an alarm               | ```somfy_alarm_triggered``` |
 | ![Shield][image-shield]                         | Box             | true = at least one element have box issue                   | ```somfy_box```             |
 | ![Communication][image-communication]           | Communication   | true = at least one element have communication issue         | ```somfy_communication```   |
-| ![Battery][image-battery]                       | Battery         | true = at least one element have low battery                 | ```somfy_battery```         |
+| ![Battery][image-battery]                       | Battery         | true = at least one element have low battery **   | ```somfy_battery```         |
 | ![Battery][image-battery]                       | Battery level   | 100 = all batteries ok, 0 = at least one element battery low | ```somfy_battery_level```   |
 | ![Closed][image-closed] ![Opened][image-opened] | Doors/Windows   | true = at least one door/window is opened                    | ```somfy_doors_windows```   |
-| ![Communication][image-communication]           | Gateway operational          | true = "Somfy Protexial IO Gateway" is successfully connected to "Somfy Protexial IO Proxy" and MQTT broker **                       | ```somfy_gsm_ok```          |
+| ![Communication][image-communication]           | Gateway operational          | true = "Somfy Protexial IO Gateway" is successfully connected to "Somfy Protexial IO Proxy" and MQTT broker ***                      | ```somfy_gsm_ok```          |
 | ![Communication][image-communication]           | GSM OK          | true = GSM is present and connected                          | ```somfy_gsm_ok```          |
 
 Entity id : ```binary_sensor.{Entity name}```
@@ -426,7 +427,9 @@ MQTT topic : ```{MqttDiscoverPrefix}/binary_sensor/{Entity name}```
 
 \* Only one "zone" can be armed at once
 
-** "Somfy Protexial IO Gateway" being using MQTT integration to create Hassio entities, no update will be made to "Gateway operational" binary sensor, if MQTT broker connection is suddenly broken...
+** Deprecated, "Battery level" is now recommended
+
+*** "Somfy Protexial IO Gateway" being using MQTT integration to create Hassio entities, no update will be made to "Gateway operational" binary sensor, if MQTT broker connection is suddenly broken...
 
 #### Sensors (2)
 
@@ -556,11 +559,15 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 | Icon                                           | Name            | Comment                               | Entity name           |
 | ---------------------------------------------- | --------------- | ------------------------------------- | --------------------- |
 | ![Alarm][image-shield]                         | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
-| ![Battery][image-battery]                      | Battery         | true = battery low, false = battery OK | ```battery```         |
+| ![Battery][image-battery]                      | Battery         | true = battery low, false = battery OK * | ```battery```         |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
 | ![Box][image-shield]                           | Box             | true = box OK/not snatched            | ```box```             |
 | ![Communication][image-communication]          | Communication   | true = communication OK               | ```communication```   |
 | ![Closed][image-closed] ![Opened][image-opened] | Door state      | true = opened, false = closeds        | ```door_window```     |
+
+
+
+\* Deprecated, "Battery level" is now recommended
 
 
 
@@ -571,11 +578,15 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 | Icon                                           | Name              | Comment                               | Entity name           |
 | ---------------------------------------------- | ----------------- | ------------------------------------- | --------------------- |
 | ![Alarm][image-shield]                         | Alarm triggered   | true = alarm triggered                | ```alarm_triggered``` |
-| ![Battery][image-battery]                      | Battery           | true = battery low, false = battery OK | ```battery```         |
+| ![Battery][image-battery]                      | Battery           | true = battery low, false = battery OK * | ```battery```         |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
 | ![Box][image-shield]                           | Box               | true = box OK/not snatched            | ```box```             |
 | ![Communication][image-communication]          | Communication     | true = communication OK               | ```communication```   |
 | ![Closed][image-closed] ![Opened][image-opened] | Door/Window state | true = opened, false = closeds        | ```door_window```     |
+
+
+
+\* Deprecated, "Battery level" is now recommended
 
 
 
@@ -585,10 +596,14 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name         |
 | ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK | ```battery```       |
+| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK * | ```battery```       |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
 | ![Box][image-shield]                  | Box           | true = box OK/not snatched            | ```box```           |
 | ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
+
+
+
+\* Deprecated, "Battery level" is now recommended
 
 
 
@@ -598,10 +613,14 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name         |
 | ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK | ```battery```       |
+| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK * | ```battery```       |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
 | ![Box][image-shield]                  | Box           | true = box OK/not snatched            | ```box```           |
 | ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
+
+
+
+\* Deprecated, "Battery level" is now recommended
 
 
 
@@ -612,11 +631,15 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 | Icon                                  | Name            | Comment                               | Entity name           |
 | ------------------------------------- | --------------- | ------------------------------------- | --------------------- |
 | ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
-| ![Battery][image-battery]             | Battery         | true = battery low, false = battery OK | ```battery```         |
+| ![Battery][image-battery]             | Battery         | true = battery low, false = battery OK * | ```battery```         |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
 | ![Box][image-shield]                  | Box             | true = box OK/not snatched            | ```box```             |
 | ![Communication][image-communication] | Communication   | true = communication OK               | ```communication```   |
 | ![Motion][image-motion]               | Motion          | true = detected                       | ```motion```          |
+
+
+
+\* Deprecated, "Battery level" is now recommended
 
 
 
@@ -627,11 +650,15 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 | Icon                                  | Name            | Comment                               | Entity name           |
 | ------------------------------------- | --------------- | ------------------------------------- | --------------------- |
 | ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
-| ![Battery][image-battery]             | Battery         | true = battery low, false = battery OK | ```battery```         |
+| ![Battery][image-battery]             | Battery         | true = battery low, false = battery OK * | ```battery```         |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
 | ![Box][image-shield]                  | Box             | true = box OK/not snatched            | ```box```             |
 | ![Communication][image-communication] | Communication   | true = communication OK               | ```communication```   |
 | ![Motion][image-motion]               | Motion          | true = detected                       | ```motion```          |
+
+
+
+\* Deprecated, "Battery level" is now recommended
 
 
 
@@ -641,10 +668,14 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name         |
 | ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK | ```battery```       |
+| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK * | ```battery```       |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
 | ![Shield][image-shield]               | Box           | true = box OK/not snatched            | ```box```           |
 | ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
+
+
+
+\* Deprecated, "Battery level" is now recommended
 
 
 
@@ -654,10 +685,14 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name         |
 | ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK | ```battery```       |
+| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK * | ```battery```       |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
 | ![Alarm][image-shield]                | Box           | true = box OK/not snatched            | ```box```           |
 | ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
+
+
+
+\* Deprecated, "Battery level" is now recommended
 
 
 
