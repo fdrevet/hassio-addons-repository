@@ -29,7 +29,7 @@
           "SomfyProtexialIO.Gateway.Common": "1.0.0",
           "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant": "1.2.0",
           "SomfyProtexialIO.Gateway.SDK": "1.0.0",
-          "SomfyProtexialIO.Proxy.Client": "1.0.5",
+          "SomfyProtexialIO.Proxy.Client": "1.0.6",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -615,16 +615,16 @@
           "lib/netcoreapp3.0/SomfyProtexialIO.Implementations.dll": {}
         }
       },
-      "SomfyProtexialIO.Proxy.Client/1.0.5": {
+      "SomfyProtexialIO.Proxy.Client/1.0.6": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "SomfyProtexialIO.SDK": "1.4.2",
-          "SomfyProtexialIO.StateCache": "1.4.9"
+          "SomfyProtexialIO.StateCache": "1.4.10"
         },
         "runtime": {
           "lib/netcoreapp3.1/SomfyProtexialIO.Proxy.Client.dll": {
-            "assemblyVersion": "1.0.5.0",
-            "fileVersion": "1.0.5.0"
+            "assemblyVersion": "1.0.6.0",
+            "fileVersion": "1.0.6.0"
           }
         },
         "compile": {
@@ -657,7 +657,7 @@
           "lib/netcoreapp3.0/SomfyProtexialIO.SDK.dll": {}
         }
       },
-      "SomfyProtexialIO.StateCache/1.4.9": {
+      "SomfyProtexialIO.StateCache/1.4.10": {
         "dependencies": {
           "Castle.Core": "4.4.1",
           "Microsoft.Extensions.Options": "3.1.8",
@@ -668,8 +668,8 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/SomfyProtexialIO.StateCache.dll": {
-            "assemblyVersion": "1.4.9.0",
-            "fileVersion": "1.4.9.0"
+            "assemblyVersion": "1.4.10.0",
+            "fileVersion": "1.4.10.0"
           }
         },
         "compile": {
@@ -1340,7 +1340,7 @@
           "Quartz": "3.2.0",
           "SomfyProtexialIO.Gateway.PlugIns": "1.0.0",
           "SomfyProtexialIO.SDK": "1.4.2",
-          "SomfyProtexialIO.StateCache": "1.4.9"
+          "SomfyProtexialIO.StateCache": "1.4.10"
         },
         "runtime": {
           "SomfyProtexialIO.Gateway.Common.dll": {}
@@ -1373,7 +1373,7 @@
           "SomfyProtexialIO.Gateway.PlugIns": "1.0.0",
           "SomfyProtexialIO.Gateway.SDK": "1.0.0",
           "SomfyProtexialIO.SDK": "1.4.2",
-          "SomfyProtexialIO.StateCache": "1.4.9"
+          "SomfyProtexialIO.StateCache": "1.4.10"
         },
         "runtime": {
           "SomfyProtexialIO.Gateway.PlugIns.HomeAssistant.dll": {}
@@ -3330,12 +3330,12 @@
       "path": "somfyprotexialio.implementations/1.8.0",
       "hashPath": "somfyprotexialio.implementations.1.8.0.nupkg.sha512"
     },
-    "SomfyProtexialIO.Proxy.Client/1.0.5": {
+    "SomfyProtexialIO.Proxy.Client/1.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vGdeMw7OxeaH/giN89S9e2yfcSPGRFjSE0RsqB4iu9u50sgRYBAWEsqobgo8rOaaaBrNvwiv/U/0p3FRjE89qw==",
-      "path": "somfyprotexialio.proxy.client/1.0.5",
-      "hashPath": "somfyprotexialio.proxy.client.1.0.5.nupkg.sha512"
+      "sha512": "sha512-ug2gaRmVT+LG45nG1uGaWs/rctq4GHqQl8cP73CGpGsUjzJeTNBc2P2gOjda4VWB8krsnOb5hJcQbBhXOaNpFg==",
+      "path": "somfyprotexialio.proxy.client/1.0.6",
+      "hashPath": "somfyprotexialio.proxy.client.1.0.6.nupkg.sha512"
     },
     "SomfyProtexialIO.Proxy.Configuration/1.4.0": {
       "type": "package",
@@ -3351,12 +3351,12 @@
       "path": "somfyprotexialio.sdk/1.4.2",
       "hashPath": "somfyprotexialio.sdk.1.4.2.nupkg.sha512"
     },
-    "SomfyProtexialIO.StateCache/1.4.9": {
+    "SomfyProtexialIO.StateCache/1.4.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1Yg4CdoUQ1rUgywKtAtxFihe3GGNU0Uz1M6DSCSNPDV8QL3ZG4+scgG5Qd71KmN14iehl7eLPduTQOvkBerekg==",
-      "path": "somfyprotexialio.statecache/1.4.9",
-      "hashPath": "somfyprotexialio.statecache.1.4.9.nupkg.sha512"
+      "sha512": "sha512-496+IgKYkAjJhYbd0QlEmcJheAH6y4SjVUPfqlousATQVSqszK9tdtXw8qUFpsi/KWug2yGp9WHCcaRK1a396A==",
+      "path": "somfyprotexialio.statecache/1.4.10",
+      "hashPath": "somfyprotexialio.statecache.1.4.10.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",

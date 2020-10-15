@@ -1,5 +1,47 @@
 # Changelog
 
+## 0.7.0
+
+"Somfy Protexial IO Gateway" is now more stable and resilient, regarding the "Somfy Protexial IO Proxy" availability/unavailability :
+
+* It waits for an available "Somfy Protexial IO Proxy" to register entities and update them
+* if "Somfy Protexial IO Proxy" became unavailable, Hassio entities are marked as unavailable too
+* if "Somfy Protexial IO Proxy" became available again, Hassio entities are marked as available
+
+
+
+To clarify the current status of "Somfy Protexial IO Gateway" (not REST API being developed yet), two optional Hassio entities has been added :
+
+* "Gateway operational" : binary sensor indicating whether the Gateway is operational or not ("Somfy Protexial IO Proxy" available and MQTT broker connected *)  
+* "Proxy connectivity" : sensor with following values
+  * "NeverConnected" (not connected, and was never connected before)
+  * "Connected" (self explanatory)
+  * "Connecting" (try to connect, was never connected before)
+  * "Reconnecting" (try to connect, was connected before)
+  * "Disconnected" (not connected, was connected before)
+
+These sensors are disabled by default, to enable them, just set "Hassio > EnableHealthcheckSensors" node to "true" in settings.
+
+> "Somfy Protexial IO Gateway" being using MQTT integration to create Hassio entities, no update will be made to "Gateway operational" binary sensor, if MQTT broker connection is suddenly broken...
+
+
+
+Added "battery level" sensors in addition of existing "battery" binary sensors.
+
+Since "Somfy Protexial IO" alarm don't provides % values for batteries (only 1/0), values are 100 (full) or 0 (low)
+
+Beware : existing "battery" binary sensors rather means "battery low" (OFF = battery "full", ON = battery low)
+
+I plan to make "battery-level" sensors works with devices.
+
+
+
+Fixed existing bug that did not update "box" and "alarm-triggered" elements, when their state were updated from Somfy Protexial IO alarm.
+
+
+
+Fixed battery sensor documentation (was inverted for Somfy elements)
+
 ## 0.6.1
 
 Fixed unretained offline/online messages, causing elements to be marked as "unavailable" when restarting Home Assistant.
