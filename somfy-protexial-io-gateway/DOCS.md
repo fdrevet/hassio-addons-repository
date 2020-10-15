@@ -191,6 +191,148 @@ HassioEntitiesIcons:
 
 
 
+## MQTT Broker
+
+MQTT broker settings. 
+
+*Node : MqttBroker*
+
+
+
+Hostname: MQTT broker hostname or ip
+
+TcpPort: 1883
+
+Username: MQTT broker optional username
+
+Password: MQTT broker optional password
+
+
+
+## Somfy Protexial IO Proxy
+
+Somfy Protexial IO Proxy settings. 
+
+*Node : Proxy*
+
+
+
+Hostname: Somfy Protexial IO Proxy hostname or ip
+
+TcpPort: 8093
+
+
+
+## Hassio
+
+Hassio settings. 
+
+*Node : Hassio*
+
+
+
+MqttDiscoverPrefix: homeassistant
+
+EntitiesMqttPrefix: somfy_
+
+EntitiesMqttSuffix: ''
+
+EntitiesNamePrefix: 'Somfy - '
+
+EntitiesNameSuffix: ''
+
+ExposeGlobalStatus: true
+
+ExposeElements: true
+
+EnableMqttAlarmControlPanel: true
+
+MqttAlarmControlPanelState: homeassistant/spiog/state
+
+MqttAlarmControlPanelCommand: homeassistant/spiog/command
+
+EnableArmedBinarySensors: true
+
+EnableDisarmedBinarySensors: false
+
+EnableHealthcheckSensors: false
+
+RegisterBatteryBinarySensors : false
+
+
+
+## Alarm Control panel commands
+
+MQTT topics to handle commands sent from Hassio MQTT Alarm Control panel. 
+
+*Node : HassioMqttAlarmControlPanelCommands*
+
+
+
+ZoneAll: homeassistant/spiog/command
+
+ZoneA: homeassistant/spiog/command_a
+
+ZoneB: homeassistant/spiog/command_b
+
+ZoneC: homeassistant/spiog/command_c
+
+
+
+## Alarm Control panel states
+
+MQTT topics that repsent Hassio MQTT Alarm Control panel states. 
+
+*Node : HassioMqttAlarmControlPanelStates*
+
+
+
+ZoneAll: homeassistant/spiog/state
+
+ZoneA: homeassistant/spiog/state_a
+
+ZoneB: homeassistant/spiog/state_b
+
+ZoneC: homeassistant/spiog/state_c
+
+
+
+## Alarm Control allow disarm
+
+indicates, for each zone, if corresponding MQTT Alarm Control panel can disarm alarm. 
+
+*Node : HassioMqttAlarmControlPanelAllowDisarm*
+
+
+
+ZoneAll: true/false
+
+ZoneA: true/false
+
+ZoneB: true/false
+
+ZoneC: true/false
+
+
+
+## Enable switches
+
+Indicates, for each zone, if corresponding Hassio switch must be created. 
+
+*Node : HassioEnableSwitches*
+
+
+
+ZoneAll: true/false
+
+ZoneA: true/false
+
+ZoneB: true/false
+
+ZoneC: true/false
+
+
+
 ## Customize entities Icons
 
 Since 0.6, you can customize most of generated Hassio entities icons, by specifying rules.
