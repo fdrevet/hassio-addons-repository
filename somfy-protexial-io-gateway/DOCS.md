@@ -195,31 +195,31 @@ HassioEntitiesIcons:
 
 MQTT broker settings. 
 
-*Node : MqttBroker*
+*Node : `MqttBroker`*
 
 
 
-Hostname: MQTT broker hostname or ip
+* `Hostname` : MQTT broker hostname or IP address
 
-TcpPort: 1883
+* `TcpPort` : MQTT broker TCP port (default 1883)
 
-Username: MQTT broker optional username
+* `Username` : MQTT broker username (optional)
 
-Password: MQTT broker optional password
+* `Password` : MQTT broker password (optional)
 
 
 
 ## Somfy Protexial IO Proxy
 
-Somfy Protexial IO Proxy settings. 
+"Somfy Protexial IO Proxy" settings. 
 
-*Node : Proxy*
+*Node : `Proxy`*
 
 
 
-Hostname: Somfy Protexial IO Proxy hostname or ip
+* `Hostname` : Somfy Protexial IO Proxy hostname or IP address
 
-TcpPort: 8093
+* `TcpPort` : 8093
 
 
 
@@ -227,91 +227,97 @@ TcpPort: 8093
 
 Hassio settings. 
 
-*Node : Hassio*
+*Node : `Hassio`*
 
 
 
-MqttDiscoverPrefix: homeassistant
+* `MqttDiscoverPrefix` : MQTT prefix to discover entities, it must be the same than one configured on Hassio (default : "homeassistant")
 
-EntitiesMqttPrefix: somfy_
+* `EntitiesMqttPrefix` : MQTT prefix for entities (default : "somfy_")
 
-EntitiesMqttSuffix: ''
+* `EntitiesMqttSuffix` : MQTT prefix for entities (default : "")
 
-EntitiesNamePrefix: 'Somfy - '
+* `EntitiesNamePrefix` : name prefix for entities (default : "Somfy - ")
 
-EntitiesNameSuffix: ''
+* `EntitiesNameSuffix` : name suffix for entities (default : "")
 
-ExposeGlobalStatus: true
+* `ExposeGlobalStatus` : indicates whether the Somfy Protexial IO alarm's global status, should be exposed as Hassio entitites (default : true)
 
-ExposeElements: true
+* `ExposeElements` : indicates whether the Somfy Protexial IO alarm's elements, should be exposed as Hassio entitites (default : true)
 
-EnableMqttAlarmControlPanel: true
+* `EnableMqttAlarmControlPanel` : enable [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : true)
 
-MqttAlarmControlPanelState: homeassistant/spiog/state
+* `MqttAlarmControlPanelState` : homeassistant/spiog/state
 
-MqttAlarmControlPanelCommand: homeassistant/spiog/command
+* `MqttAlarmControlPanelCommand` : homeassistant/spiog/command
 
-EnableArmedBinarySensors: true
+* `EnableArmedBinarySensors` : indicates whether the armed binary sensors entities should be registered, or not (default : true) Please note that these entities have inverted logic (armed value will show "unlocked" in Hassio interface)
 
-EnableDisarmedBinarySensors: false
+* `EnableDisarmedBinarySensors` : indicates whether the disarmed binary sensors entities should be registered, or not (default : false) These entities are consistent with Hassio logic (ie. armed value will show "locked" in Hassio interface)
 
-EnableHealthcheckSensors: false
+* `EnableHealthcheckSensors` : indicates whether the "Somfy protexial IO Gateway" health related sensors, should be created, or not (default : false) If enabled, "Gateway operational" and "Proxy connectivity" Hassio sensors entities are registered.
 
-RegisterBatteryBinarySensors : false
+* `RegisterBatteryBinarySensors` : indicates whether the Hassio battery binary sensors should be created, or not (default : false) If enabled (not recommended), devices will lost their battery indicators. Also, please note that battery binary sensors have inverted logic and must be handled as "battery low" in Hassio.
 
 
 
 ## Alarm Control panel commands
 
-MQTT topics to handle commands sent from Hassio MQTT Alarm Control panel. 
+MQTT topics to handle arming/disarming commands sent from a Hassio [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt)
 
-*Node : HassioMqttAlarmControlPanelCommands*
+> We recommend not to change it, unless you changed `MqttDiscoverPrefix`
+
+*Node : `HassioMqttAlarmControlPanelCommands`*
 
 
 
-ZoneAll: homeassistant/spiog/command
+* `ZoneAll` : specify the MQTT topic that will handle an all zones (A, B, C) arming/disarming command sent from a [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : "`MqttDiscoverPrefix`/spiog/command" => "homeassistant/spiog/command")
 
-ZoneA: homeassistant/spiog/command_a
+* `ZoneA` : specify the MQTT topic that will handle a zone A arming/disarming command sent from a [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : "`MqttDiscoverPrefix`/spiog/command_a" => "homeassistant/spiog/command_a")
 
-ZoneB: homeassistant/spiog/command_b
+* `ZoneB ` : specify the MQTT topic that will handle a zone B arming/disarming command sent from a [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : "`MqttDiscoverPrefix`/spiog/command_b" => "homeassistant/spiog/command_b")
 
-ZoneC: homeassistant/spiog/command_c
+* `ZoneC ` : specify the MQTT topic that will handle a zone C arming/disarming command sent from a [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : "`MqttDiscoverPrefix`/spiog/command_c" => "homeassistant/spiog/command_c")
 
 
 
 ## Alarm Control panel states
 
-MQTT topics that repsent Hassio MQTT Alarm Control panel states. 
+MQTT topics that represent Hassio [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) states. 
 
-*Node : HassioMqttAlarmControlPanelStates*
+> We recommend not to change it, unless you changed `MqttDiscoverPrefix`
+
+*Node : `HassioMqttAlarmControlPanelStates`*
 
 
 
-ZoneAll: homeassistant/spiog/state
+* `ZoneAll` : specify the MQTT topic that will represent all zones (A, B, C) arming/disarming state of [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : "`MqttDiscoverPrefix`/spiog/state" => "homeassistant/spiog/state")
 
-ZoneA: homeassistant/spiog/state_a
+* `ZoneA` : specify the MQTT topic that will represent zone A arming/disarming state of [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : "`MqttDiscoverPrefix`/spiog/state_a" => "homeassistant/spiog/state_a")
 
-ZoneB: homeassistant/spiog/state_b
+* `ZoneB` : specify the MQTT topic that will represent zone B arming/disarming state of [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : "`MqttDiscoverPrefix`/spiog/state_b" => "homeassistant/spiog/state_b")
 
-ZoneC: homeassistant/spiog/state_c
+* `ZoneC` : specify the MQTT topic that will represent zone C arming/disarming state of [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : "`MqttDiscoverPrefix`/spiog/state_c" => "homeassistant/spiog/state_c")
 
 
 
 ## Alarm Control allow disarm
 
-indicates, for each zone, if corresponding MQTT Alarm Control panel can disarm alarm. 
+Indicates, for each zone, if corresponding [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) can disarm alarm.
 
-*Node : HassioMqttAlarmControlPanelAllowDisarm*
+Please beware that disarming `could be unsecured` (ie. if no code is specified in [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt))
+
+*Node : `HassioMqttAlarmControlPanelAllowDisarm`*
 
 
 
-ZoneAll: true/false
+* `ZoneAll` : indicates whether all zones (A, B, C) can be disarmed at once, with [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : true)
 
-ZoneA: true/false
+* `ZoneA` : indicates whether zone A can be disarmed, with [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : true)
 
-ZoneB: true/false
+* `ZoneB` : indicates whether zone B can be disarmed, with [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : true)
 
-ZoneC: true/false
+* `ZoneC` : indicates whether zone C can be disarmed, with [MQTT Alarm Control panel](https://www.home-assistant.io/integrations/alarm_control_panel.mqtt) (default : true)
 
 
 
@@ -319,17 +325,18 @@ ZoneC: true/false
 
 Indicates, for each zone, if corresponding Hassio switch must be created. 
 
-*Node : HassioEnableSwitches*
+Please beware that arming/disarming switches **are unsecured** (ie. no code is required to arm/disarm alarm)
+
+*Node : `HassioEnableSwitches`*
 
 
 
-ZoneAll: true/false
+* `ZoneAll` : indicates whether all zones (A, B, C) Hassio entity switch will be register (default : true)
+* `ZoneA` : indicates whether zone A Hassio entity switch will be register (default : true)
 
-ZoneA: true/false
+* `ZoneB` : indicates whether zone B Hassio entity switch will be register (default : true)
 
-ZoneB: true/false
-
-ZoneC: true/false
+* `ZoneC` : indicates whether zone C Hassio entity switch will be register (default : true)
 
 
 
@@ -347,14 +354,16 @@ Each line  represent a Somfy element (by code) or Somfy property :
 
 ```yaml
 ...
-Hassio:
-  ...
-  HassioEntitiesIcons:
-    "alarm-triggered": "door"
-    "396245": "door"
-    "396294": "window"
-    "301181": "garage_door"
+HassioEntitiesIcons:
+  "alarm-triggered": "door"
+  "396245": "door"
+  "396294": "window"
+  "301181": "garage_door"
 ```
+
+
+
+> Please note that HassioEntitiesIcons will be deprecated in future release, in order to have a possibility to customize more properties of Hassio entities
 
 
 

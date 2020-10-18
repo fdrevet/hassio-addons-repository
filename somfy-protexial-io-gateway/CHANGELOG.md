@@ -43,6 +43,10 @@ Added missing sensors :
 
 
 
+Big documentation update.
+
+
+
 ## 0.7.0
 
 "Somfy Protexial IO Gateway" is now more stable and resilient, regarding the "Somfy Protexial IO Proxy" availability/unavailability :
