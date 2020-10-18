@@ -2,7 +2,19 @@
 
 ## 0.8.0
 
-Somfy elements are now set online/offline, depending of their running property in web user interface (ie. running/paused)
+Added running sensors, values :
+
+* Running
+
+* Paused
+
+> Great to see running sensor, but why not switches not change state from Hassio ?
+>
+> It was expected to add this feature in this release, but change "Running/Paused" require to be connected as "i" (installer) user, while you have to be connected as "u" (user) user to arm and disarm alarm... It would be possible to temporary connect as "i" user and come back to "u" user, but without possibility to arm/disarm alarm during this delay. Anyway, if this feature is added, it would be handled by the "Somfy Protexial IO Proxy".
+
+
+
+Somfy elements are now set online/offline, depending of their running property in web user interface (ie. running/paused), except for running sensors.
 
 
 
@@ -12,9 +24,24 @@ Added "Hassio > RegisterBatteryBinarySensors" option (default false) :
 
 * false : existing "battery" binary sensors are removed (only "battery level" sensors are available)
 
+Using only battery sensors (ie. removing battery binary sensors) show battery indicators in devices.
+
 
 
 Fixed Somfy elements alarm triggered binary sensor, who was inverted.
+
+
+
+Added missing sensors :
+
+* "Keyboard", "External siren", "Internal siren" Somfy elements have now "alarm triggered" binary sensors
+* "Keyboard" has now battery sensor
+
+
+
+"Gateway operational" and "Proxy connectivity" entities are now unregistered if "Hassio > EnableHealthcheckSensors" option is false.
+
+
 
 ## 0.7.0
 
