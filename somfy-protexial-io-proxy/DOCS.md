@@ -4,11 +4,11 @@ Welcome to "Somfy Protexial IO Proxy" add-on !
 
 # Why this add-on ?
 
-I don't own a Tahoma Box and don't need/want one for the moment.
+I don't own a [Tahoma Box](https://www.somfy.fr/produits/1811478/tahoma) and don't need/want one for the moment.
 
 
 
-So, I wrote this add-on in order to let Hass.IO and my alarm communicate bidirectionally.
+So, I wrote this add-on in order to let HASS.io and my alarm communicate bidirectionally.
 
 
 
@@ -20,19 +20,19 @@ So, I wrote this add-on in order to let Hass.IO and my alarm communicate bidirec
 
 This add-on is UNOFFICIAL.
 
-This add-on doesn't rely on any Somfy integration.
+This add-on does NOT rely on any [Somfy integration](https://www.home-assistant.io/integrations/somfy/).
 
-I don't work for Somfy Group or am affiliated with them in any way.
+I don't work for [Somfy Group](https://www.somfy-group.com) or am affiliated with them in any way.
+
+"Somfy", "Somfy Protexial IO", and the icons of Somfy elements used in the documentation, are the property of [Somfy Group](https://www.somfy-group.com).
 
 
 
 ## Privacy
 
-I do not collect data or personal information.
+This add-on doesn't collect any data or personal information.
 
-All the data are kept on your HASS.io installation.
-
-
+This add-on doesn't store any data, even locally, all data are managed in memory.
 
 ## Security
 
@@ -44,7 +44,7 @@ Please be sure that it's not exposed to Internet.
 
 ## Warranty
 
-THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+There is no warranty for the program, to the extent permitted by applicable law. except when otherwise stated in writing the copyright holders and/or other parties provide the program “as is” without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the program is with you. Should the program prove defective, you assume the cost of all necessary servicing, repair or correction.
 
 
 
@@ -92,17 +92,35 @@ How it works ?
 
 # Stability
 
-Some stability issues can arise with web scrapping (sometimes the alarm is not responding)
+It globally works well for my, but I still have some stability issue with web scrapping (sometimes the alarme is not responding, I guess scrapping every 5 seconds is too fast, will try with 10 seconds => can be configured in the addon)
 
-Scrapping every 5 seconds maybe too fast, anyway this can be configured (see Configuration section)
+I will work on it in the next days.
 
 
 
-# Sensors
+Also, It’s important to note that once the proxy add-on will work, it will be difficult to connect to the Alarm Web UI, since the proxy add-on do connect on the alarm, and try to reconnect if anything goes wrong (like a connection from alarm web UI, since only one user can be logged in at once)
 
-"Somfy Protexial IO Proxy" doesn't create any sensor in Hassio.
+I plan to release an “Emulator”, consuming “Gateway” REST API, and fixing this ennoying problem.
 
-It exposes a REST API, consumed by "Somfy Protexial IO Gateway" (who creates sensors), see "Design" section to understand by.
+
+
+# Hass.io devices
+
+"Somfy Protexial IO Proxy" doesn't create any devices in your Hass.io.
+
+
+
+It exposes a REST API, consumed by "Somfy Protexial IO Gateway" (who creates devices), see "Design" section to understand why.
+
+
+
+# Hass.io entities
+
+"Somfy Protexial IO Proxy" doesn't create any entities in your Hass.io.
+
+
+
+It exposes a REST API, consumed by "Somfy Protexial IO Gateway" (who creates entities), see "Design" section to understand why.
 
 
 
