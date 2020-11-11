@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "SomfyProtexialIO.Gateway.Hassio/0.8.0": {
+      "SomfyProtexialIO.Gateway.Hassio/0.8.1": {
         "dependencies": {
           "Initia.Mqtt.M2Mqtt": "1.2.2",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.8",
@@ -3354,7 +3354,7 @@
     }
   },
   "libraries": {
-    "SomfyProtexialIO.Gateway.Hassio/0.8.0": {
+    "SomfyProtexialIO.Gateway.Hassio/0.8.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
