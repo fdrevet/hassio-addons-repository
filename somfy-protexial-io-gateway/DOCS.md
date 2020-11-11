@@ -703,16 +703,34 @@ Each HASS.io entity MQTT root topic will be constructed as follow :
 
 
 
-#### Door sensor (5) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_do.gif)
+#### Central (5) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_trans.gif)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.
+Each Somfy element property is creating a HASS.io sensor entity.
+
+| Icon                                  | Name            | Comment                                         | Entity name           |
+| ------------------------------------- | --------------- | ----------------------------------------------- | --------------------- |
+| ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                          | ```alarm_triggered``` |
+| ![Battery][image-battery] *           | Battery         | true = battery low, false = battery OK          | ```battery```         |
+| ![Battery][image-battery]             | Battery level   | 100 = battery OK, 0 = battery low               | ```battery_level```   |
+| ![Box][image-shield]                  | Box             | true = box OK/not snatched, false = box removed | ```box```             |
+| ![Communication][image-communication] | Communication   | true = communication OK                         | ```communication```   |
+
+
+
+\* Deprecated, "Battery level" is now recommended
+
+
+
+#### Door sensor (6) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_do.gif)
+
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                           | Name            | Comment                               | Entity name           |
 | ---------------------------------------------- | --------------- | ------------------------------------- | --------------------- |
 | ![Alarm][image-shield]                         | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
-| ![Battery][image-battery]                      | Battery         | true = battery low, false = battery OK * | ```battery```         |
+| ![Battery][image-battery] *                    | Battery         | true = battery low, false = battery OK | ```battery```         |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
-| ![Box][image-shield]                           | Box             | true = box OK/not snatched            | ```box```             |
+| ![Box][image-shield]                           | Box             | true = box OK/not snatched, false = box removed | ```box```             |
 | ![Communication][image-communication]          | Communication   | true = communication OK               | ```communication```   |
 | ![Closed][image-closed] ![Opened][image-opened] | Door state      | true = opened, false = closeds        | ```door_window```     |
 
@@ -722,16 +740,16 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Door window sensor (5) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_dovitre.gif)
+#### Door window sensor (6) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_dovitre.gif)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                           | Name              | Comment                               | Entity name           |
 | ---------------------------------------------- | ----------------- | ------------------------------------- | --------------------- |
 | ![Alarm][image-shield]                         | Alarm triggered   | true = alarm triggered                | ```alarm_triggered``` |
-| ![Battery][image-battery]                      | Battery           | true = battery low, false = battery OK * | ```battery```         |
+| ![Battery][image-battery] *                    | Battery           | true = battery low, false = battery OK | ```battery```         |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
-| ![Box][image-shield]                           | Box               | true = box OK/not snatched            | ```box```             |
+| ![Box][image-shield]                           | Box               | true = box OK/not snatched, false = box removed | ```box```             |
 | ![Communication][image-communication]          | Communication     | true = communication OK               | ```communication```   |
 | ![Closed][image-closed] ![Opened][image-opened] | Door/Window state | true = opened, false = closeds        | ```door_window```     |
 
@@ -741,15 +759,15 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Keyboard (3) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_keyb.gif)
+#### Keyboard (4) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_keyb.gif)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name         |
 | ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK * | ```battery```       |
+| ![Battery][image-battery] *           | Battery       | true = battery low, false = battery OK | ```battery```       |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
-| ![Box][image-shield]                  | Box           | true = box OK/not snatched            | ```box```           |
+| ![Box][image-shield]                  | Box           | true = box OK/not snatched, false = box removed | ```box```           |
 | ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
 
 
@@ -758,15 +776,15 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Indoor siren (3) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_sirenint.gif)
+#### Indoor siren (4) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_sirenint.gif)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name         |
 | ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK * | ```battery```       |
+| ![Battery][image-battery] *           | Battery       | true = battery low, false = battery OK | ```battery```       |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
-| ![Box][image-shield]                  | Box           | true = box OK/not snatched            | ```box```           |
+| ![Box][image-shield]                  | Box           | true = box OK/not snatched, false = box removed | ```box```           |
 | ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
 
 
@@ -775,16 +793,16 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Motion detector (5) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/icon_camera_dm_on.gif)
+#### Motion detector (6) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/icon_camera_dm_on.gif)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                  | Name            | Comment                               | Entity name           |
 | ------------------------------------- | --------------- | ------------------------------------- | --------------------- |
 | ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
-| ![Battery][image-battery]             | Battery         | true = battery low, false = battery OK * | ```battery```         |
+| ![Battery][image-battery] *           | Battery         | true = battery low, false = battery OK | ```battery```         |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
-| ![Box][image-shield]                  | Box             | true = box OK/not snatched            | ```box```             |
+| ![Box][image-shield]                  | Box             | true = box OK/not snatched, false = box removed | ```box```             |
 | ![Communication][image-communication] | Communication   | true = communication OK               | ```communication```   |
 | ![Motion][image-motion]               | Motion          | true = detected                       | ```motion```          |
 
@@ -794,16 +812,16 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Motion detector with photo (5) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/icon_camera_dm_on.gif)
+#### Motion detector with photo (6) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/icon_camera_dm_on.gif)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                  | Name            | Comment                               | Entity name           |
 | ------------------------------------- | --------------- | ------------------------------------- | --------------------- |
 | ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
-| ![Battery][image-battery]             | Battery         | true = battery low, false = battery OK * | ```battery```         |
+| ![Battery][image-battery] *           | Battery         | true = battery low, false = battery OK | ```battery```         |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
-| ![Box][image-shield]                  | Box             | true = box OK/not snatched            | ```box```             |
+| ![Box][image-shield]                  | Box             | true = box OK/not snatched, false = box removed | ```box```             |
 | ![Communication][image-communication] | Communication   | true = communication OK               | ```communication```   |
 | ![Motion][image-motion]               | Motion          | true = detected                       | ```motion```          |
 
@@ -813,15 +831,15 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Outdoor siren (3) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_sirenext.gif)
+#### Outdoor siren (4) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_sirenext.gif)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name         |
 | ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK * | ```battery```       |
+| ![Battery][image-battery] *           | Battery       | true = battery low, false = battery OK | ```battery```       |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
-| ![Shield][image-shield]               | Box           | true = box OK/not snatched            | ```box```           |
+| ![Shield][image-shield]               | Box           | true = box OK/not snatched, false = box removed | ```box```           |
 | ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
 
 
@@ -830,15 +848,36 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 
 
-#### Smoke detector (3)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.
+#### Remote control / Four Buttons (1) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_remote4.gif)
+
+Each Somfy element property is creating a HASS.io sensor entity.
+
+| Icon                                  | Name | Comment                 | Entity name         |
+| ------------------------------------- | ---- | ----------------------- | ------------------- |
+| ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
+
+
+
+#### Remote control / Two Buttons (1) ![img](https://github.com/fdrevet/hassio-addons-repository/raw/master/somfy-protexial-io-gateway/images/p_remote2.gif)
+
+Each Somfy element property is creating a HASS.io sensor entity.
+
+| Icon                                  | Name | Comment                 | Entity name         |
+| ------------------------------------- | ---- | ----------------------- | ------------------- |
+| ![Alarm][image-shield]                | Alarm triggered | true = alarm triggered                | ```alarm_triggered``` |
+
+
+
+#### Smoke detector (4)
+
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                  | Name          | Comment                               | Entity name         |
 | ------------------------------------- | ------------- | ------------------------------------- | ------------------- |
-| ![Battery][image-battery]             | Battery       | true = battery low, false = battery OK * | ```battery```       |
+| ![Battery][image-battery] *           | Battery       | true = battery low, false = battery OK | ```battery```       |
 | ![Battery][image-battery]                      | Battery level         | 100 = battery OK, 0 = battery low | ```battery_level```         |
-| ![Alarm][image-shield]                | Box           | true = box OK/not snatched            | ```box```           |
+| ![Alarm][image-shield]                | Box           | true = box OK/not snatched, false = box removed | ```box```           |
 | ![Communication][image-communication] | Communication | true = communication OK               | ```communication``` |
 
 
@@ -849,11 +888,12 @@ All Somfy element properties are creating a HASS.io binary sensor entity.
 
 #### Tahoma (1)
 
-All Somfy element properties are creating a HASS.io binary sensor entity.s
+Each Somfy element property is creating a HASS.io sensor entity.
 
 | Icon                                  | Name          | Comment                 | Entity name         |
 | ------------------------------------- | ------------- | ----------------------- | ------------------- |
 | ![Communication][image-communication] | Communication | true = communication OK | ```communication``` |
+
 
 
 
